@@ -5,14 +5,17 @@ import java.util.*;
 public class Subsets_78 {
     public static void main(String[] args) {
         int n = 3;
+        System.out.println(Integer.toBinaryString(n));
         printBinaryRepresentations(n);
     }
     static void printBinaryRepresentations(int n){
+        int j =0;
         for (int i = (int) Math.pow(2, n); i < (int) Math.pow(2, n + 1); ++i) {
             System.out.print("ith value : " + i +", ");
             String bitmask = Integer.toBinaryString(i).substring(1);
             System.out.print("real value : " + Integer.toBinaryString(i)+", ");
-            System.out.println(bitmask);
+            System.out.println(bitmask+ " for " + j);
+            j++;
         }
     }
 

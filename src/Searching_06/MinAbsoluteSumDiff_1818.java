@@ -1,5 +1,7 @@
 package Searching_06;
 
+import jdk.jfr.Description;
+
 import java.util.Arrays;
 
 public class MinAbsoluteSumDiff_1818 {
@@ -10,6 +12,7 @@ public class MinAbsoluteSumDiff_1818 {
         int[] sArr = {1,2,4,4,7,10};
         System.out.println(binarySearch(sArr,6));
     }
+    @Description("unique start + 1 < end")
     private static long binarySearch(int[] arr, long target) {
         int start = 0,
                 end = arr.length-1,

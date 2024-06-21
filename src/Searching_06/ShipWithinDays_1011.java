@@ -5,6 +5,7 @@ public class ShipWithinDays_1011 {
         int[] arr = {1,2,3,4,5,6,7,8,9,10};
         int[] arr2 = {1,2,3,1,1};
         System.out.println(shipWithinDays(arr2, 4));
+        Integer.signum(1);
 //        System.out.println(getDays(arr2, 3));
     }
     public static int shipWithinDays(int[] weights, int days) {
@@ -23,6 +24,7 @@ public class ShipWithinDays_1011 {
             }else if((noOfDays > days)){
                 start = mid+1;
             }
+
         }
         return ans;
     }
