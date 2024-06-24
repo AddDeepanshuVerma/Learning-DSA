@@ -6,7 +6,8 @@ import java.util.Map;
 public class checkSubArraySum_523 {
     public static void main(String[] args) {
         int[] arr = {-3, 3, 1, 1, 1};
-        System.out.println(checkSubArraySum(arr, 3));
+        int[] arr2 = {0,0,0,1,0,0,1,0,0,0};
+        System.out.println(checkSubArraySum(arr2, 2));
     }
 
     public static int checkSubArraySum(int[] arr, int k) {
