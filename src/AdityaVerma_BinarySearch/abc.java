@@ -1,4 +1,4 @@
-package AdityaVerma_BS;
+package AdityaVerma_BinarySearch;
 
 public class abc {
     public static void main(String[] args) {

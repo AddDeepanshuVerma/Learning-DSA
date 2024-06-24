@@ -8,7 +8,6 @@ class CanReach_1871 {
     }
 
 //    Input: s = "011010", minJump = 2, maxJump = 3
-
     private static boolean canReach(String str, int min, int max) {
         int n = str.length();
         if (str.charAt(n - 1) != '0') return false;

@@ -1,6 +1,4 @@
-package AdityaVerma_BS;
-
-import java.util.Arrays;
+package AdityaVerma_BinarySearch;
 
 public class Order_agnostic_BS {
     static int[] arr  = {0, 1, 2, 3, 4, 5, 6, 7, 8};

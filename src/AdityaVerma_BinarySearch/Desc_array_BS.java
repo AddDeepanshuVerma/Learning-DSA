@@ -1,4 +1,4 @@
-package AdityaVerma_BS;
+package AdityaVerma_BinarySearch;
 
 public class Desc_array_BS {
     static int[] arr = {8, 7, 6, 5, 4, 3, 2, 1};
