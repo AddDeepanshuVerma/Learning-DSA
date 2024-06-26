@@ -1,12 +1,34 @@
 package Strings;
 
 import java.security.KeyPair;
+import java.sql.SQLOutput;
+import java.util.*;
 
 public class Random {
     public static void main(String[] args) {
-        String s1 = "HI";
-        System.out.println(s1.toLowerCase());
+        Queue<Integer> q = new LinkedList<>();
+        List<Integer> q2 = new LinkedList<>();
+        Vector<Integer> stk = new Stack<>();
+        Queue<Integer> pq = new PriorityQueue<>();
+//        System.out.println(Comparable instanceof Object);
+        List<Integer> list = new ArrayList<>();
+        Collections.sort(list);
+        Collections.sort(list);
 
+
+        /*System.out.println(str.contentEquals(new StringBuilder("testString")));
+        StringBuilder sb = new StringBuilder("testString");
+        System.out.println(str.equals(sb));*/
+
+        /*char ch = '@';
+        System.out.println(Character.isLetterOrDigit(ch));
+        System.out.println(Character.isDigit(ch));*/
+
+
+        /*Character[] array = {'U', 'U', 'Z'};
+        System.out.println(List.of(array));
+        int U = Collections.frequency(List.of(array), 'U');
+        System.out.println(U);*/
 
         /*
         StringBuilder st = new StringBuilder("hi");

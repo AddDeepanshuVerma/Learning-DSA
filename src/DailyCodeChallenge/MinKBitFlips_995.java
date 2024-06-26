@@ -11,9 +11,9 @@ class MinKBitFlips_995 {
         System.out.println(Arrays.toString(nums));
     }
 
-    // Brute force approach
+    // Brute force approach, GOT TLE
     public static int minKBitFlips(int[] nums, int k) {
-        int i = 0;
+        int i;
         int count = 0;
         int n = nums.length;
         for (i = 0; i <= n - k; i++) {
