@@ -1,19 +1,29 @@
 package Strings;
 
-import java.security.KeyPair;
-import java.sql.SQLOutput;
 import java.util.*;
 
 public class Random {
     public static void main(String[] args) {
-        Queue<Integer> q = new LinkedList<>();
+//        Set<Integer> set2 = new HashSet<>();
+        Set<Integer> set = new TreeSet<>(Set.of(1, 2, 3, 4, 5, 6));
+        Iterator<Integer> it = set.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+        System.out.println(set);
+
+//        System.out.println(set);
+
+
+        /*Queue<Integer> q = new LinkedList<>();
         List<Integer> q2 = new LinkedList<>();
         Vector<Integer> stk = new Stack<>();
         Queue<Integer> pq = new PriorityQueue<>();
-//        System.out.println(Comparable instanceof Object);
+        System.out.println(Comparable instanceof Object);
         List<Integer> list = new ArrayList<>();
         Collections.sort(list);
         Collections.sort(list);
+        Collections.sort(list);*/
 
 
         /*System.out.println(str.contentEquals(new StringBuilder("testString")));
