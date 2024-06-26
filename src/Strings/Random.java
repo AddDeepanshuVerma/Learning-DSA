@@ -14,6 +14,7 @@ public class Random {
         List<Integer> list = new ArrayList<>();
         Collections.sort(list);
         Collections.sort(list);
+        Collections.sort(list);
 
 
         /*System.out.println(str.contentEquals(new StringBuilder("testString")));
