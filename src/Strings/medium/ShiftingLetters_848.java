@@ -1,4 +1,4 @@
-package Sorting_07.Ques.Medium;
+package Strings.medium;
 
 class ShiftingLetters_848 {
 

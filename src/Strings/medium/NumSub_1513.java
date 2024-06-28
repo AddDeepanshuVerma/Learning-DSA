@@ -1,4 +1,4 @@
-package Sorting_07.Ques.Medium;
+package Strings.medium;
 
 class NumSub_1513 {
     public static void main(String[] args) {

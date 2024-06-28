@@ -1,4 +1,4 @@
-package Sorting_07.Ques.Medium;
+package Strings.medium;
 
 class minimumLength_1750 {
     public static void main(String[] args) {
