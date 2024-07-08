@@ -2,10 +2,10 @@ package BackTracking_11;
 
 import java.util.*;
 
-public class PermutationOfString_recursion {
+public class _11_PermutationOfString_recursion {
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
-        String str = "aab";
+        String str = "abc";
         permute(str, "", list);
         System.out.println(list);
     }

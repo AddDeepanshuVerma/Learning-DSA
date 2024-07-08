@@ -5,11 +5,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class PermutationOfString_recursion_BackTracking {
+public class _12_PermutationOfString_recursion_BackTracking {
     public static void main(String[] args) {
-        List<String> ans = new ArrayList<String>();
+        List<String> ans = new ArrayList<>();
         String str = "abc";
-        char[] chars = {'1', '2', '3'};
+        char[] chars = str.toCharArray(); //{'1', '2', '3'};
         solve(0, chars, ans);
         System.out.println(ans);
     }

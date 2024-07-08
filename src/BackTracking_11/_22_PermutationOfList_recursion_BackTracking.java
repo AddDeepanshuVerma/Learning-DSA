@@ -2,7 +2,7 @@ package BackTracking_11;
 
 import java.util.*;
 
-public class PermutationOfList_recursion_BackTracking {
+public class _22_PermutationOfList_recursion_BackTracking {
     public static void main(String[] args) {
         List<List<Integer>> ans = new ArrayList<>();
         int[] arr = {1, 2, 3};
