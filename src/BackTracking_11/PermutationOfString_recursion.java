@@ -26,19 +26,15 @@ public class PermutationOfString_recursion {
         }
     }
 
-/*
-
-    private static void permute_(String ip, String op, List<String> list) {
-        if (ip.isEmpty()) {
+    private static void permut(String ip, String op, List<String> list) {
+        if (ip.isEmpty())
             list.add(op);
-            return;
-        }
-        for (int i = 0; i < ip.length(); i++) {
-            String newIp = ip.substring(0, i) + ip.substring(i + 1);
-            String newOp = op + ip.charAt(i);
-            permute_(newIp, newOp, list);
-
+        else {
+            for (int i = 0; i < ip.length(); i++) {
+                String newIp = ip.substring(0, i) + ip.substring(i + 1);
+                String newOp = op + ip.charAt(i);
+                permut(newIp, newOp, list);
+            }
         }
     }
-*/
 }
