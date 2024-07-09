@@ -29,7 +29,6 @@ public class _12_PermutationOfString_recursion_BackTracking {
             }
         }
     }
-
     private static void swap(char[] s, int idx, int i) {
         char temp = s[idx];
         s[idx] = s[i];
