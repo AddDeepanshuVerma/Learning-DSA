@@ -12,18 +12,17 @@ public class LargestNumberIn_K_Swaps_3 {
         sb.append(str);
         solve(str.toCharArray(), k, 0, sb);
         // sb is not updating while being pass by reference value
+        // found the issue, was in new keyword at line
         return sb.toString();
     }
 
     private static void solve(char[] arr, int k, int start, StringBuilder max) {
-//        base condition
         if ((start == arr.length - 1) || k == 0) {
             return;
         }
         for (int i = start + 1; i < arr.length; i++) {
             if (arr[i] > arr[start]) {
                 swap(arr, start, i);
-//              compare which is greater arr or ans[0] and put maximum in ans[0]
                 max = compare(max, new StringBuilder(String.valueOf(arr)));
                 solve(arr, k - 1, start + 1, max);
                 swap(arr, start, i);

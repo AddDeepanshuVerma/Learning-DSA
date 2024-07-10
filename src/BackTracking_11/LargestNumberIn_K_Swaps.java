@@ -2,7 +2,7 @@ package BackTracking_11;
 
 public class LargestNumberIn_K_Swaps {
     public static void main(String[] args) {
-        String str = "912345678";
+        String str = "3499";
         int k = 2;
         LargestNumber(str, k);
     }

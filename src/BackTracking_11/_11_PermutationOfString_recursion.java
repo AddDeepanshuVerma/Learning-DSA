@@ -5,7 +5,7 @@ import java.util.*;
 public class _11_PermutationOfString_recursion {
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
-        String str = "aab";
+        String str = "aac";
         permute(str, "", list);
         System.out.println(list);
     }

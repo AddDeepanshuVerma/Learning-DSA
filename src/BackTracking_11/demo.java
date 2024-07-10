@@ -1,17 +1,17 @@
 package BackTracking_11;
 
+import java.util.Arrays;
+
 public class demo {
     public static void main(String[] args) {
-        String str = "552";
-        StringBuilder sb = new StringBuilder("str");
-        System.out.println(sb);
-        appendSomething(str.toCharArray(), sb);
-        System.out.println(sb);
+        StringBuilder sb = new StringBuilder("552");
+        System.out.println("sb.hashCode() = " + sb.hashCode());
+        appendSomething(sb);
+        System.out.println("sb.hashCode() = " + sb.hashCode());
     }
 
-    private static void appendSomething(char[] arr, StringBuilder sb234) {
-
-        arr = new char[]{'z', 'f'};
+    private static void appendSomething(StringBuilder sb234) {
         sb234.append("12");
+        System.out.println("sb234.hashCode() = " + sb234.hashCode());
     }
 }
