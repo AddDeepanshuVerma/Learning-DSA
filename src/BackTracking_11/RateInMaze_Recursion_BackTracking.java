@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class RateInMaze_BackTracking_2 {
+public class RateInMaze_Recursion_BackTracking {
     public static void main(String[] args) {
         int[][] arr = {
                 {1, 1, 1, 1, 1},
