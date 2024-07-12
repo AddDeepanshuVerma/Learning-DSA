@@ -1,4 +1,4 @@
-package Top_150;
+package Top_Interview_150;
 
 class CanJump_55 {
     public static void main(String[] args) {

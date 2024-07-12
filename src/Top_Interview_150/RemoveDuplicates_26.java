@@ -1,4 +1,4 @@
-package Top_150;
+package Top_Interview_150;
 
 class RemoveDuplicates_26 {
     public int removeDuplicates(int[] nums) {
