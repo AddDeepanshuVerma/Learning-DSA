@@ -1,2 +1,0 @@
-https://leetcode.com/discuss/study-guide/3444552/binary-search-on-answer-template-generic-template
-
