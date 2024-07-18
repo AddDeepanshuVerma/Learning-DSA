@@ -24,19 +24,19 @@ public class conditionalLoops {
         int num = in.nextInt();
         int sum = 0;
         int count = 0;
-        for (int i = 1; 2*i<= num; i++) {
+        for (int i = 1; 2 * i <= num; i++) {
             count++;
             if (num % i == 0) {
                 sum += i;
-                if(sum>num) {
-                    System.out.println("Broke the loop at value : "+i + " as sum : "+ sum);
+                if (sum > num) {
+                    System.out.println("Broke the loop at value : " + i + " as sum : " + sum);
                     break;
                 }
             }
 
         }
         System.out.println("loop ran : " + count + " times");
-        System.out.println(sum==num);
+        System.out.println(sum == num);
 
     }
 
@@ -64,7 +64,10 @@ public class conditionalLoops {
 
     private static void factors() {
         Scanner scanner = new Scanner(System.in);
-        int[] arr = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+        int[] arr = Arrays.stream(scanner.nextLine()
+                                         .split(" "))
+                          .mapToInt(Integer::parseInt)
+                          .toArray();
         int temp = arr[0];
         for (int j = 1; j <= temp; j++) {
             if (temp % j == 0) System.out.print(j + " ");
@@ -74,7 +77,10 @@ public class conditionalLoops {
 
     private static void productAndSumOfDigits() {
         Scanner scanner = new Scanner(System.in);
-        int[] arr = Arrays.stream(scanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+        int[] arr = Arrays.stream(scanner.nextLine()
+                                         .split(" "))
+                          .mapToInt(Integer::parseInt)
+                          .toArray();
         int temp = arr[0];
         int product = 1;
         int sum = 0;
@@ -83,7 +89,7 @@ public class conditionalLoops {
             sum += temp % 10;
             temp /= 10;
         }
-        System.out.println("productAndSumOfDigits are: "+ product +" "+ sum);
+        System.out.println("productAndSumOfDigits are: " + product + " " + sum);
 
     }
 }
