@@ -1,22 +1,25 @@
 package _12_BitManipulation_NumSYS.easy;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
-class Subsets_78 {
+class SubsetsWithDup_90 {
+
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3};
-        System.out.println(Subsets_78.subsets(arr));
+        int[] arr = {1, 2, 2};
+        System.out.println(SubsetsWithDup_90.subsetsWithDup(arr));
     }
 
-    public static List<List<Integer>> subsets(int[] nums) {
+    public static List<List<Integer>> subsetsWithDup(int[] nums) {
         ArrayList<Integer> output = new ArrayList<>();
-        List<List<Integer>> res = new ArrayList<>();
+        Set<List<Integer>> res = new HashSet<>();
         DFS(nums, 0, output, res);
-        return res;
+        return new ArrayList<>(res);
     }
 
-    public static void DFS(int[] nums, int i, List<Integer> op, List<List<Integer>> res) {
+    public static void DFS(int[] nums, int i, List<Integer> op, Set<List<Integer>> res) {
         if (i == nums.length) {
             res.add(new ArrayList<>(op));
             return;
@@ -26,4 +29,5 @@ class Subsets_78 {
         DFS(nums, i + 1, op, res);
         op.removeLast();
     }
+
 }

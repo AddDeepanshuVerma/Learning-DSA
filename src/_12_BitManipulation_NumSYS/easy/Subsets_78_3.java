@@ -3,34 +3,36 @@ package _12_BitManipulation_NumSYS.easy;
 import java.util.ArrayList;
 import java.util.List;
 
-class Subsets_78_2 {
+class Subsets_78_3 {
+    private List<List<Integer>> res = new ArrayList<>();
+
     public static void main(String[] args) {
         int[] arr = {1, 2, 3};
-        System.out.println(Subsets_78_2.subsets(arr));
+        System.out.println(new Subsets_78_3().subsets(arr));
     }
 
-    public static List<List<Integer>> subsets(int[] nums) {
+    public List<List<Integer>> subsets(int[] nums) {
         ArrayList<Integer> input = new ArrayList<>();
-        for (int num : nums) input.add(num);
-        ArrayList<Integer> output = new ArrayList<>();
-
-        List<List<Integer>> res = new ArrayList<>();
-        recursion(output, 0, input, res);
+        for (int num : nums)
+            input.add(num);
+        recursion(new ArrayList<>(), 0, input);
         return res;
     }
 
-    private static void recursion(ArrayList<Integer> op, int index, ArrayList<Integer> ip, List<List<Integer>> res) {
+    private void recursion(ArrayList<Integer> op, int index, ArrayList<Integer> ip) {
         if (index == ip.size()) {
             res.add(new ArrayList<>(op));
             return;
         }
-        recursion(op, index + 1, ip, res);
+        recursion(op, index + 1, ip);
         op.add(ip.get(index));
-        recursion(op, index + 1, ip, res);
+        recursion(op, index + 1, ip);
         op.removeLast();
     }
 
-   /* private static void subsets(String str) {
+/*
+
+    private static void subsets(String str) {
         recursion("", str);
     }
 
@@ -41,6 +43,8 @@ class Subsets_78_2 {
         }
         recursion(op, ip.substring(1));
         recursion(op + ip.charAt(0), ip.substring(1));
-    }*/
+    }
+
+*/
 
 }
