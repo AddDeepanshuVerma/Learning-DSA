@@ -1,16 +1,18 @@
 package _07_Sorting.Algos;
 
 import jdk.jfr.Description;
+
 import java.util.Arrays;
 
 @Description("All test cases passed")
 public class QuickSort_asc {
     public static void main(String[] args) {
-        int[] arr = {5,5,5,5,5,5,5,5,6,7,8,5,1,1,2,0,0};
+        int[] arr = {5, 5, 5, 5, 5, 5, 5, 5, 6, 7, 8, 5, 1, 1, 2, 0, 0};
         quickSort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
 
     }
+
     public static void quickSort(int[] arr, int left, int right) {
         if (left < right) {
             int PivotIndex = partition(arr, left, right);
