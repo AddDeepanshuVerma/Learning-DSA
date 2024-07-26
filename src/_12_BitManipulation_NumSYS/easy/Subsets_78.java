@@ -1,32 +1,29 @@
 package _12_BitManipulation_NumSYS.easy;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 class Subsets_78 {
     public static void main(String[] args) {
-        int[] arr = {1, 2};
+        int[] arr = {1, 2, 3};
         System.out.println(Subsets_78.subsets(arr));
     }
-    public static List<List<Integer>> subsets(int[] nums) {
-        ArrayList<Integer> input = new ArrayList<>();
-        for (int num : nums) input.add(num);
-        ArrayList<Integer> output = new ArrayList<>();
 
+    public static List<List<Integer>> subsets(int[] nums) {
+        ArrayList<Integer> output = new ArrayList<>();
         List<List<Integer>> res = new ArrayList<>();
-        DFS(output, input, res);
+        DFS(nums, 0, output, res);
         return res;
     }
 
-    private static void DFS(ArrayList<Integer> output, ArrayList<Integer> input, List<List<Integer>> res) {
-        if (input.isEmpty()) {
-            res.add(new ArrayList<>(output));
+    public static void DFS(int[] nums, int i, List<Integer> op, List<List<Integer>> res) {
+        if (i == nums.length) {
+            res.add(new ArrayList<>(op));
             return;
         }
-        Integer remove = input.removeFirst();
-        DFS(output, input, res);
-        output.add(remove);
-        DFS(output, input, res);
+        DFS(nums, i + 1, op, res);
+        op.add(nums[i]);
+        DFS(nums, i + 1, op, res);
+        op.removeLast();
     }
 }
