@@ -1,4 +1,4 @@
-package _12_BitManipulation_NumSYS.easy;
+package _12_BitManipulation_NumSYS.medium;
 
 import java.util.ArrayList;
 import java.util.List;

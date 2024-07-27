@@ -1,27 +1,24 @@
-package _12_BitManipulation_NumSYS.easy;
+package _12_BitManipulation_NumSYS.medium;
 
-class SingleNumber_137_2 {
+class SingleNumber_137 {
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5, 1,2,3,4,5, 1,2,3,4,5, 1,2,3,4,5, 7};
-        int repeating = 4;
-        System.out.println(singleNumber(arr, repeating));
+        int[] arr = {-2, -2, 1, 1, 4, 1, 4, 4, -4, -2};
+        System.out.println(singleNumber(arr));
     }
 
-    public static int singleNumber(int[] nums, int repeating) {
+    public static int singleNumber(int[] nums) {
         int ans = 0;
 
         for (int i = 0; i < 32; i++) {
             int count = 0;
             for (int num : nums)
                 count += (num >> i) & 1;
-            count %= repeating;
+            count %= 3;
             ans = ans | (count << i);
         }
 
         return ans;
     }
-
-/*
 
     // not getting correct answer with negative values
     // 1. Integer.parseInt doesn't work with values till 32th bit
@@ -47,6 +44,5 @@ class SingleNumber_137_2 {
         }
         return Integer.parseInt(ans, 2);
     }
-*/
 
 }
