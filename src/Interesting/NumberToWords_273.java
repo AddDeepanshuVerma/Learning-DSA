@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 class NumberToWords_273 {
-    private HashMap<Long, String> below_10 = new HashMap<>(Map.of(0L, "", 1L, "One", 2L, "Two", 3L, "Three", 4L, "Four", 5L, "Five", 6L, "Six", 7L, "Seven", 8L, "Eight", 9L, "Nine"));
-    private HashMap<Long, String> below_20 = new HashMap<>(Map.of(10L, "Ten", 11L, "Eleven", 12L, "Twelve", 13L, "Thirteen", 14L, "Fourteen", 15L, "Fifteen", 16L, "Sixteen", 17L, "Seventeen", 18L, "Eighteen", 19L, "Nineteen"));
-    private HashMap<Long, String> below_100 = new HashMap<>(Map.of(2L, "Twenty", 3L, "Thirty", 4L, "Forty", 5L, "Fifty", 6L, "Sixty", 7L, "Seventy", 8L, "Eighty", 9L, "Ninety"));
+    private final HashMap<Long, String> below_10 = new HashMap<>(Map.of(0L, "", 1L, "One", 2L, "Two", 3L, "Three", 4L, "Four", 5L, "Five", 6L, "Six", 7L, "Seven", 8L, "Eight", 9L, "Nine"));
+    private final HashMap<Long, String> below_20 = new HashMap<>(Map.of(10L, "Ten", 11L, "Eleven", 12L, "Twelve", 13L, "Thirteen", 14L, "Fourteen", 15L, "Fifteen", 16L, "Sixteen", 17L, "Seventeen", 18L, "Eighteen", 19L, "Nineteen"));
+    private final HashMap<Long, String> below_100 = new HashMap<>(Map.of(2L, "Twenty", 3L, "Thirty", 4L, "Forty", 5L, "Fifty", 6L, "Sixty", 7L, "Seventy", 8L, "Eighty", 9L, "Ninety"));
 
     public static void main(String[] args) {
         long num = 1000000000000000000L;
