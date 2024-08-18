@@ -2,7 +2,7 @@ package DailyCodeChallenge.Level_1;
 
 
 class NodesBetweenCriticalPoints_2058 {
-    public static class ListNode {
+    private static class ListNode {
         int val;
         ListNode next;
 
