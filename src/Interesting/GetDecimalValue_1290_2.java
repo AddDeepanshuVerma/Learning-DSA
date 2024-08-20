@@ -30,12 +30,28 @@ class GetDecimalValue_1290_2 {
     }
 
     public int getDecimalValue2(ListNode head) {
+        int num = 0;
+        while (head != null) {
+            num = (num * 2) + head.val;
+            head = head.next;
+        }
+        return num;
+    }
+
+    public int getDecimalValue3(ListNode head) {
         ListNode temp = head;
         int num = 0;
-        while(temp != null){
-            num = (num * 2) + temp.val;
+        while (temp != null) {
+            num = (num << 1) + temp.val;
             temp = temp.next;
         }
+        return num;
+    }
+
+    public int getDecimalValue4(ListNode head) {
+        int num = 0;
+        for (; head != null; head = head.next)
+            num = (num << 1) + head.val;
         return num;
     }
 }

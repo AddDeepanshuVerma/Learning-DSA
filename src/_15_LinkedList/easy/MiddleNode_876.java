@@ -28,6 +28,20 @@ class MiddleNode_876 {
         return slow;
     }
 
+    public ListNode middleNod3(ListNode head) {
+        if (head == null || head.next == null) return head;
+
+        ListNode slow = head, fast = head;
+        ListNode prev = null;
+        while (fast != null && fast.next != null) {
+            prev = slow;
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        prev.next = null;
+        return slow;
+    }
+
     public ListNode middleNode(ListNode head) {
         int length = 0;
         ListNode temp = head;

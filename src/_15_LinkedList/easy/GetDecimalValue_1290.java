@@ -38,4 +38,13 @@ class GetDecimalValue_1290 {
         }
         return num;
     }
+    public int getDecimalValue3(ListNode head) {
+        ListNode temp = head;
+        int num = 0;
+        while(temp != null){
+            num = (num << 1) + temp.val;
+            temp = temp.next;
+        }
+        return num;
+    }
 }
