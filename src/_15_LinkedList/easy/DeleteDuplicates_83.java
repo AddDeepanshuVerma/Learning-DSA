@@ -32,6 +32,21 @@ public class DeleteDuplicates_83 {
         obj.print();
     }
 
+    public ListNode deleteDuplicates2(ListNode head) {
+        if(head == null) return null;
+        ListNode temp = head;
+        while (temp.next != null) {
+            if (temp.val == temp.next.val) {
+                temp.next = temp.next.next;
+            } else {
+//                increment the pointer to next element
+                temp = temp.next;
+            }
+        }
+        return head;
+    }
+
+
     public ListNode deleteDuplicates(ListNode head) {
         ListNode node = head;
         if (node != null) {

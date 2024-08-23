@@ -4,7 +4,9 @@ import java.time.DayOfWeek;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import static java.time.DayOfWeek.*;
 
@@ -23,7 +25,11 @@ public class AntonClass {
 
 //        printingMethod();
 //        System.out.println(tribonacci(37));
+
         System.out.println(addToArrayForm22(new int[]{1,2,0,0}, 34));
+
+        System.out.println(Arrays.toString("hi".toCharArray()));
+
     }
 
 

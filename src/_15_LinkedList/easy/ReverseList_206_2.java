@@ -36,10 +36,20 @@ class ReverseList_206_2 {
         return prev;
     }
 
-    public ListNode reverseList2(ListNode head) {
+    public ListNode reverseList2_1(ListNode head) {
+        if (head == null || head.next == null) return head;
+
+        ListNode newHead = reverseList2_1(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newHead; 
+    }
+
+
+    public ListNode reverseList2_2(ListNode head) {
         if (head.next == null) return head;
 
-        ListNode newHead = reverseList2(head.next);
+        ListNode newHead = reverseList2_2(head.next);
         ListNode front = head.next;
         front.next = head;
         head.next = null;
