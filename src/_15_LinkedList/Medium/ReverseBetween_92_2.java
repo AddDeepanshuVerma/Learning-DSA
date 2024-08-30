@@ -26,12 +26,12 @@ class ReverseBetween_92_2 {
         for (int i = 1; i < left; i++) {
             prev = prev.next;
         }
-        ListNode tail = prev.next;
+        ListNode curr = prev.next;
 
         for (int i = 1; i <= right - left; i++) {
             ListNode temp = prev.next;
-            prev.next = tail.next;
-            tail.next = tail.next.next;
+            prev.next = curr.next;
+            curr.next = curr.next.next;
             prev.next.next = temp;
         }
         return dHead.next;
