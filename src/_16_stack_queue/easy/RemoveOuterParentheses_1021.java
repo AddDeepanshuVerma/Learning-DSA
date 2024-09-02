@@ -24,6 +24,21 @@ class RemoveOuterParentheses_1021 {
         return s.toString();
     }
 
+    public static String removeOuterParentheses3(String s) {
+        StringBuilder ans = new StringBuilder();
+        ArrayDeque<Character> stack = new ArrayDeque<>();
+        for (char c : s.toCharArray()) {
+            if (c == '(') {
+                stack.push(c);
+                ans.append((stack.size() > 1) ? c : "");
+            } else if (c == ')') {
+                stack.pop();
+                ans.append(stack.isEmpty() ? "" : c);
+            }
+        }
+        return ans.toString();
+    }
+
     @Description("Wrong approach hence the result")
     public static String removeOuterParentheses(String s) {
         String ans = "";
