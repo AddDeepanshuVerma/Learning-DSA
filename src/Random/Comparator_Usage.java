@@ -8,15 +8,20 @@ import java.util.Comparator;
 public class Comparator_Usage {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8};
-        Integer[] wArray = Arrays.stream(arr).boxed().toArray(Integer[]::new);
-        Arrays.sort(wArray, (a,b) -> Integer.bitCount(a) - Integer.bitCount(b));
+        Integer[] wArray = Arrays.stream(arr)
+                                 .boxed()
+                                 .toArray(Integer[]::new);
+        Arrays.sort(wArray, (a, b) -> Integer.bitCount(a) - Integer.bitCount(b));
         System.out.println(Arrays.toString(wArray));
 
     }
+
     @Description("Comparator usage")
     private static void Comparator_types(int[] arr) {
         int[] ep = {0, 1, 2, 3, 4, 5, 6, 7, 8};
-        Integer[] wEp= Arrays.stream(arr).boxed().toArray(Integer[]::new);
+        Integer[] wEp = Arrays.stream(arr)
+                              .boxed()
+                              .toArray(Integer[]::new);
 
         // complete intro of basic comparator definition,
         // It needs to be performed on wrapper classes
@@ -40,7 +45,7 @@ public class Comparator_Usage {
         Arrays.sort(wEp, comp4);
 
         // can adjust the comparator within required parameter
-        Arrays.sort(wEp, (a,b) -> Integer.bitCount(a) - Integer.bitCount(b));
+        Arrays.sort(wEp, (a, b) -> Integer.bitCount(a) - Integer.bitCount(b));
     }
 
 
