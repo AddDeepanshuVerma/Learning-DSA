@@ -31,7 +31,7 @@ class DecodeString_394_2 {
                 while (!stack.isEmpty() && !stack.peek().equals("[")) {
                     ans.insert(0, stack.pop());
                 }
-                stack.pop();
+                stack.pop(); // popping "[" out of stack
                 stack.push(repeat(ans.toString(), num.pop()));
             }
         }

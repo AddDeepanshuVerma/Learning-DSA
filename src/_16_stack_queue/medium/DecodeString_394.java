@@ -1,5 +1,7 @@
 package _16_stack_queue.medium;
 
+import jdk.jfr.Description;
+
 class DecodeString_394 {
     public static void main(String[] args) {
         DecodeString_394 o = new DecodeString_394();
@@ -45,6 +47,7 @@ class DecodeString_394 {
         return res;
     }
 
+    @Description("Would not work")
     private String solve(char[] arr, int index) {
         StringBuilder res = new StringBuilder();
         while (index < arr.length && arr[index] != ']') {

@@ -1,5 +1,7 @@
 package _16_stack_queue.medium;
 
+import jdk.jfr.Description;
+
 import java.util.ArrayDeque;
 import java.util.Stack;
 
@@ -12,6 +14,7 @@ class DecodeString_394_3 {
         System.out.println(o.decodeString("3[a]2[bc]"));
     }
 
+    @Description("_2 is better and understandable")
     public String decodeString(String s) {
         Stack<Integer> num = new Stack<>();
         Stack<String> stack = new Stack<>();
