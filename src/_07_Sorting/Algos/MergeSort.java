@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MergeSort {
     public static void main(String[] args) {
-        int[] arr = {1,2,3,1};
+        int[] arr = {1, 2, 3, 1,4,3,2,54,6,7,8,8,5,3,2,3,5};
         int[] res = mergeSort(arr);
         System.out.println(Arrays.toString(res));
 //        System.out.println(Arrays.toString(mergeSort(arr)));
@@ -24,25 +24,11 @@ public class MergeSort {
         int[] res = new int[first.length + second.length];
         int i = 0, j = 0, k = 0;
         while (i < first.length && j < second.length) {
-            if (first[i] < second[j]) {
-                res[k] = first[i];
-                i++;
-            } else {
-                res[k] = second[j];
-                j++;
-            }
-            k++;
+            if (first[i] < second[j]) res[k++] = first[i++];
+            else res[k++] = second[j++];
         }
-        while (i < first.length) {
-            res[k] = first[i];
-            i++;
-            k++;
-        }
-        while (j < second.length) {
-            res[k] = second[j];
-            j++;
-            k++;
-        }
+        while (i < first.length) res[k++] = first[i++];
+        while (j < second.length) res[k++] = second[j++];
         return res;
     }
 }
