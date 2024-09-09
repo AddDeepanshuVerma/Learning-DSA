@@ -1,4 +1,4 @@
-package _10_Recursion.algo1;
+package _10_Recursion.algo2;
 
 import java.util.ArrayList;
 
@@ -12,11 +12,13 @@ public class JosephusProblem {
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = 1; i <= n; i++) list.add(i);
         int index = 0;
-        return JosephusIndex(index, --k, list);
+        return JosephusIndex(index, k - 1, list);
     }
 
     private static Integer JosephusIndex(int index, int k, ArrayList<Integer> list) {
-        if (list.size() == 1) return list.getFirst();
+        if (list.size() == 1) {
+            return list.getFirst();
+        }
         index = (index + k) % list.size();
         list.remove(index);
         return JosephusIndex(index, k, list);

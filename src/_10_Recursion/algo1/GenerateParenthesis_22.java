@@ -14,10 +14,8 @@ class GenerateParenthesis_22 {
             return;
         }
 
-        if (open != 0)
-            getPrintedAllComb(op + "(", open - 1, close, list);
-        if (close > open)
-            getPrintedAllComb(op + ")", open, close - 1, list);
+        if (open != 0) getPrintedAllComb(op + "(", open - 1, close, list);
+        if (close > open) getPrintedAllComb(op + ")", open, close - 1, list);
     }
 
     public static List<String> generateParenthesis(int n) {

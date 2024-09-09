@@ -2,7 +2,7 @@ package _10_Recursion.algo1;
 
 public class printAllPrefixesOfNDigitsWithMore1s {
     public static void main(String[] args) {
-        int n = 3;
+        int n = 4;
         printParenthesis("", n, 0, 0);
     }
 

@@ -8,8 +8,12 @@ import java.util.Set;
 class LetterCasePermutation_784_3 {
     static Set<String> set = new HashSet<>();
 
-    public static List<String> letterCasePermutation(String s) {
-        String str = "3z4";
+    public static void main(String[] args) {
+        LetterCasePermutation_784_3 obj = new LetterCasePermutation_784_3();
+        System.out.println(obj.letterCasePermutation("3z4"));
+    }
+
+    public static List<String> letterCasePermutation(String str) {
         print("", str);
         List<String> list = new ArrayList<>(set);
         set.clear();
