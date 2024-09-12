@@ -17,11 +17,11 @@ class RegionsBySlashes_959 {
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[i].length(); j++) {
                 if (grid[i].charAt(j) == '/') {
-                    matrix[i * 3][j * 3 + 2] = 1;
+                    matrix[i * 3    ][j * 3 + 2] = 1;
                     matrix[i * 3 + 1][j * 3 + 1] = 1;
-                    matrix[i * 3 + 2][j * 3] = 1;
+                    matrix[i * 3 + 2][j * 3    ] = 1;
                 } else if (grid[i].charAt(j) == '\\') {
-                    matrix[i * 3][j * 3] = 1;
+                    matrix[i * 3    ][j * 3     ] = 1;
                     matrix[i * 3 + 1][j * 3 + 1] = 1;
                     matrix[i * 3 + 2][j * 3 + 2] = 1;
                 }

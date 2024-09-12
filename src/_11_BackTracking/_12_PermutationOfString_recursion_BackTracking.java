@@ -19,10 +19,9 @@ public class _12_PermutationOfString_recursion_BackTracking {
             ans.add(String.valueOf(s));
             return;
         }
-        Set<Character> st = new HashSet<>();
+        Set<Character> set = new HashSet<>();
         for (int i = idx; i < s.length; i++) {
-            if (!st.contains(s[i])) {
-                st.add(s[i]);
+            if (!set.contains(s[i])) { set.add(s[i]);
                 swap(s, idx, i);
                 solve(idx + 1, s, ans);
                 swap(s, idx, i);

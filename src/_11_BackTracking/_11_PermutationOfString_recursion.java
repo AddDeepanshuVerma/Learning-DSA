@@ -26,14 +26,14 @@ public class _11_PermutationOfString_recursion {
         }
     }
 
-    private static void permut(String ip, String op, List<String> list) {
+    private static void permute2(String ip, String op, List<String> list) {
         if (ip.isEmpty())
             list.add(op);
         else {
             for (int i = 0; i < ip.length(); i++) {
                 String newIp = ip.substring(0, i) + ip.substring(i + 1);
                 String newOp = op + ip.charAt(i);
-                permut(newIp, newOp, list);
+                permute2(newIp, newOp, list);
             }
         }
     }

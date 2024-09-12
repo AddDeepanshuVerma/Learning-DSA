@@ -2,7 +2,7 @@ package _11_BackTracking;
 
 public class DigitsInIncreasingOrder_2 {
     public static void main(String[] args) {
-        int N = 5;
+        int N = 4;
         String op = "";
         digits(N, op);
     }
