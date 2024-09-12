@@ -2,8 +2,8 @@ package _11_BackTracking.Algo1;
 
 public class LargestNumberIn_K_Swaps_2 {
     public static void main(String[] args) {
-        String str = "1234";
-        int k = 1;
+        String str = "12113456";
+        int k = 2;
         LargestNumber(str, k);
     }
 
@@ -33,11 +33,8 @@ public class LargestNumberIn_K_Swaps_2 {
 
     private static char maxValueInRange(char[] arr, int start) {
         char max = 0;
-        for (int i = start; i < arr.length; i++) {
-            if (arr[i] > max) {
-                max = arr[i];
-            }
-        }
+        for (int i = start; i < arr.length; i++)
+            if (arr[i] > max) max = arr[i];
         return max;
     }
 
