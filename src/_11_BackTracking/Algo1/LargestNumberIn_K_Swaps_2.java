@@ -1,9 +1,9 @@
-package _11_BackTracking;
+package _11_BackTracking.Algo1;
 
-public class LargestNumberIn_K_Swaps {
+public class LargestNumberIn_K_Swaps_2 {
     public static void main(String[] args) {
-        String str = "3499";
-        int k = 2;
+        String str = "1234";
+        int k = 1;
         LargestNumber(str, k);
     }
 
@@ -18,8 +18,9 @@ public class LargestNumberIn_K_Swaps {
         if ((start == arr.length - 1) || k == 0) {
             return;
         }
+        char maxValue = maxValueInRange(arr, start + 1);
         for (int i = start + 1; i < arr.length; i++) {
-            if (arr[i] > arr[start]) {
+            if (arr[i] > arr[start] && arr[i] == maxValue) {
                 swap(arr, start, i);
 //              compare which is greater arr or max[0] and put maximum in max[0]
                 max[0] = compare(max[0], arr);
@@ -28,6 +29,16 @@ public class LargestNumberIn_K_Swaps {
             }
         }
         solve(arr, k, start + 1, max);
+    }
+
+    private static char maxValueInRange(char[] arr, int start) {
+        char max = 0;
+        for (int i = start; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max;
     }
 
     private static String compare(String s1, char[] arr) {

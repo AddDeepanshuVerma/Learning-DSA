@@ -1,4 +1,4 @@
-package _11_BackTracking;
+package _11_BackTracking.Algo1;
 
 public class LargestNumberIn_K_Swaps_3 {
     public static void main(String[] args) {

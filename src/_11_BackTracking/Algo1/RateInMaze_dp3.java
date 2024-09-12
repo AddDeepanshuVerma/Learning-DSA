@@ -1,4 +1,4 @@
-package _11_BackTracking;
+package _11_BackTracking.Algo1;
 
 import java.util.ArrayList;
 import java.util.List;

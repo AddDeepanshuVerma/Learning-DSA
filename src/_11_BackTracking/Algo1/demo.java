@@ -1,4 +1,4 @@
-package _11_BackTracking;
+package _11_BackTracking.Algo1;
 
 public class demo {
     public static void main(String[] args) {

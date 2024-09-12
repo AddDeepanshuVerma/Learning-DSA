@@ -1,4 +1,4 @@
-package _11_BackTracking;
+package _11_BackTracking.Algo1;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -21,13 +21,15 @@ public class _12_PermutationOfString_recursion_BackTracking {
         }
         Set<Character> set = new HashSet<>();
         for (int i = idx; i < s.length; i++) {
-            if (!set.contains(s[i])) { set.add(s[i]);
+            if (!set.contains(s[i])) {
+                set.add(s[i]);
                 swap(s, idx, i);
                 solve(idx + 1, s, ans);
                 swap(s, idx, i);
             }
         }
     }
+
     private static void swap(char[] s, int idx, int i) {
         char temp = s[idx];
         s[idx] = s[i];
