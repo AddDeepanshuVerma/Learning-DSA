@@ -9,15 +9,15 @@ public class Print_Unique_SubSets {
     static List<String> list = new ArrayList<>();
 
     public static void main(String[] args) {
-        String str = "abb";
-//        printSubsets3(new StringBuilder(""), str, 0);
-//        System.out.println(list);
-//
-//        list.clear();
-//        printSubsets2("", str, 0);
-//        System.out.println(list);
-//
-//        list.clear();
+        String str = "abc";
+        printSubsets3(new StringBuilder(""), str, 0);
+        System.out.println(list);
+
+        list.clear();
+        printSubsets2("", str, 0);
+        System.out.println(list);
+
+        list.clear();
         printSubsets("", str);
         System.out.println(list);
     }
@@ -28,10 +28,10 @@ public class Print_Unique_SubSets {
             list.add(op.toString());
             return;
         }
-        printSubsets3(op, ip, index + 1);
         op.append(ip.charAt(index));
         printSubsets3(op, ip, index + 1);
         op.deleteCharAt(op.length() - 1);
+        printSubsets3(op, ip, index + 1);
     }
 
     @Description("Using recursion, while input value is not changed")
@@ -41,8 +41,8 @@ public class Print_Unique_SubSets {
             return;
         }
 
-        printSubsets2(op, ip, index + 1);
         printSubsets2(op + ip.charAt(index), ip, index + 1);
+        printSubsets2(op, ip, index + 1);
     }
 
     @Description("Using recursion, while input is changed")
@@ -51,7 +51,7 @@ public class Print_Unique_SubSets {
             list.add(op);
             return;
         }
-        printSubsets(op, ip.substring(1));
         printSubsets(op + ip.charAt(0), ip.substring(1));
+        printSubsets(op, ip.substring(1));
     }
 }
