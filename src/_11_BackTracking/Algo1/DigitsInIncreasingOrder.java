@@ -2,7 +2,7 @@ package _11_BackTracking.Algo1;
 
 public class DigitsInIncreasingOrder {
     public static void main(String[] args) {
-        int N = 5;
+        int N = 2;
         // in N == 1, return 0 to n or watch 2nd part : DigitsInIncreasingOrder_2.java
         String op = "";
         digits(N, op);
