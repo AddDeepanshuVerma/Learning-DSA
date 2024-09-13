@@ -40,3 +40,6 @@ record Pair3(Integer key, Integer value) {
 
 record Pair4() {
 }
+
+record Pair5<K, V, T>(K key, V value, T time) {
+}
