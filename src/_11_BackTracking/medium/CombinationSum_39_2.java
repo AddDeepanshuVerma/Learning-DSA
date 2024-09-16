@@ -1,6 +1,7 @@
-package _10_Recursion.medium;
+package _11_BackTracking.medium;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 class CombinationSum_39_2 {
     List<List<Integer>> list;
@@ -19,7 +20,7 @@ class CombinationSum_39_2 {
     }
 
     private void dfs(int index, int target, int[] arr, List<Integer> temp) {
-        /*
+/*
         System.out.print("temp = " + temp);
         System.out.print(", target = " + target);
         if (target == 0) {
@@ -31,7 +32,7 @@ class CombinationSum_39_2 {
             list.add(new ArrayList<>(temp));
             return;
         }
-         /*
+/*
          yha humne phle index ki sari possibility le li ki phla index; 1 baar aae to kya, 2 baar aae to kya
          aur ye phla baki index ki kitni values ke saath aake expected result de dega aise hi
          maximum baar aae to kya and then jb second element ki possibility pr gye to uski sari possibility dekhi
