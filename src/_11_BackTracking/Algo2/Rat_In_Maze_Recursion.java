@@ -11,7 +11,7 @@ public class Rat_In_Maze_Recursion {
                 {1, 1, 1, 1, 1},
                 {0, 0, 0, 0, 1},
                 {1, 1, 1, 1, 1},
-                {1, 0, 0, 1, 0},
+                {1, 0, 0, 0, 0},
                 {1, 1, 1, 1, 1}
         };
         find_all_possible_ways(arr);
