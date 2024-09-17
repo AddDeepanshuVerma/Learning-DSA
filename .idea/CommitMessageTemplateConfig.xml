@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CommitMessageTemplateConfig">
+    <option name="manualTemplate" value="# Title: Summary, imperative, start upper case, don't end with a period&#10;# No more than 50 chars. #### 50 chars is here:  #&#10;&#10;# Remember blank line between title and body.&#10;&#10;# Body: Explain *what* and *why* (not *how*). Include task ID (Jira issue).&#10;# Wrap at 72 chars. ################################## which is here:  #&#10;&#10;&#10;# At the end: Include Co-authored-by for all contributors. &#10;# Include at least one empty line before it. Format: &#10;# Co-authored-by: name &lt;user@users.noreply.github.com&gt;&#10;#&#10;# How to Write a Git Commit Message:&#10;# https://chris.beams.io/posts/git-commit/&#10;#&#10;# 1. Separate subject from body with a blank line&#10;# 2. Limit the subject line to 50 characters&#10;# 3. Capitalize the subject line&#10;# 4. Do not end the subject line with a period&#10;# 5. Use the imperative mood in the subject line&#10;# 6. Wrap the body at 72 characters&#10;# 7. Use the body to explain what and why vs. how" />
+  </component>
+</project>
