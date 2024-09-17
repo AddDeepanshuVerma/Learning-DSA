@@ -31,7 +31,7 @@ public class SolveSudoku_37_walkcc {
     public void solveSudoku(char[][] board) {
         int n = board.length;
         int row = 0, col = 0;
-        solve(board, row, col, n)
+        solve(board, row, col, n);
     }
 
     private boolean solve(char[][] board, int row, int col, int n) {
