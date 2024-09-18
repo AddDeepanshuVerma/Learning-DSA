@@ -30,16 +30,16 @@ class Pair<K, V> {
     public String toString() {
         return "(" + this.key + ", " + this.value + ")";
     }
-}
 
-record Pair2<K, V>(K key, V value) {
-}
+    record Pair2<K, V>(K key, V value) {
+    }
 
-record Pair3(Integer key, Integer value) {
-}
+    record Pair3(Integer key, Integer value) {
+    }
 
-record Pair4() {
-}
+    record Pair4() {
+    }
 
-record Pair5<K, V, T>(K key, V value, T time) {
+    record Pair5<K, V, T>(K key, V value, T time) {
+    }
 }

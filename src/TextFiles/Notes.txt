@@ -1,6 +1,3 @@
-import java.util.Collections;
-import java.util.List;
-
 String[] st = s.split(" ");
 Arrays.sort(st, (a, b) -> (int) a.charAt(a.length() - 1) - (int) b.charAt(b.length() - 1));
 return Arrays.stream(st).map(str -> str.substring(0, str.length() - 1)).collect(Collectors.joining(" "));
@@ -116,7 +113,8 @@ https://leetcode.com/problems/divide-chocolate/ <-- this one is gold!!! (hard)
 
 
 by the way, 1E6 means 1 times 10 to the power 6, which is 1.000.000, not 100.000.
-2E8 means 2 times 10 to the power 8, or 200.000.000 (two hundred million). It's simple: 1E6 = 1 followed by 6 zeroes; 2E8 = 2 followed by 8 zeroes.
+2E8 means 2 times 10 to the power 8, or 200.000.000 (two hundred million).
+It's simple: 1E6 = 1 followed by 6 zeroes; 2E8 = 2 followed by 8 zeroes.
 double v = 1E6;
 int end = (int) 1E6;
 
@@ -145,7 +143,8 @@ is not synchronized, which means that multiple threads can access it simultaneou
 
 Features:
 Array deques have no capacity restrictions and they grow as necessary to support usage.
-They are not thread-safe which means that in the absence of external synchronization, ArrayDeque does not support concurrent access by multiple threads.
+They are not thread-safe which means that in the absence of external synchronization,
+ArrayDeque does not support concurrent access by multiple threads.
 Null elements are prohibited in the ArrayDeque.
 ArrayDeque class is likely to be faster than Stack when used as a stack.
 ArrayDeque class is likely to be faster than LinkedList when used as a queue.
@@ -223,8 +222,8 @@ Integer. ..............
      num ^ 1 is num - 1 if num is odd, or num + 1 if num is even.
      We only use num ^ 1 when num is odd.
      Example:
-	 	n = 15 or 1111. n ^ 0001 = 1110 (14)
-	 	n = 8 or 1000. n ^ 0001 = 1001 (9)
+	 	n = 15 or 1111.		n ^ 0001 = 1110 (14)
+	 	n = 8 or 1000.		n ^ 0001 = 1001 (9)
 
 
 >> is SHIFT RIGHT Operation, the number is the number of bits moved (moving the whole binary one bit right).
@@ -420,6 +419,7 @@ public static void main(String[] args) {
 
         map.merge("A", 2, Integer::sum);
         // Inserts new entry with key "A" and value 2, but since key "A" already exist it will merge the value
+		// with previous one hence 1 + 2 = 3
         //map -> {"A": 3}
 
         System.out.println(map);
@@ -456,7 +456,270 @@ private boolean isLeapYear(int year) {
 
 
 ==================================================================================
+		int mul = num.stream().reduce(1, (a, b) -> a * b); // Multiply all elements together
 
+		System.out.println("Multiplication of Elements : " + mul);
+
+		int sum = num.stream().reduce(0, (a, b) -> a + b); // Sum all elements
+
+		System.out.println("Sum of Elements : " + sum);
+
+==================================================================================
+return Arrays.stream(grid)
+                     .map(int[]::clone)
+                     .toArray(int[][]::new);
+
+==================================================================================
+    private static final AtomicInteger uniqueId = new AtomicInteger(0);
+	int value = uniqueId.incrementAndGet();
+
+==================================================================================
+# if an list of variable is needs to be created in all the objects of our class
+then we can atleast declare that variable at class level and initalize each time a new
+instance of that class created, though this signle reference variable will be used each time and
+will result in lower storage.
+
+static List<List<Integer>> list;
+function {list = new ArrayList<>();}
+
+# when setting some an object to some value always create a fresh one to save:
+list.add(new ArrayList<>(temp));
+
+
+
+==================================================================================
+for given LinkedList = [1,1,0,0,1]
+convert to decimal (ans = 25)
+
+		int num = 0;
+        while(temp != null){
+            num = (num * 2) + temp.val;
+            temp = temp.next;
+        }
+        return num;
+
+==================================================================================
+
+public int getDecimalValue4(ListNode head) {
+        int num = 0;
+        for (; head != null; head = head.next)
+            num = (num << 1) + head.val;
+        return num;
+    }
+
+==================================================================================
+        Stack<Integer> stack = new Stack<>();
+		stack.add(temp.val);
+		int val = stack.pop();
+
+		List<Integer> stack = new Stack<>();
+		stack.add(temp.val);
+		int val = stack.getLast();
+        stack.removeLast();
+
+==================================================================================
+Debugging your code during a coding interview can be a nightmare situation.
+
+Debugging is hard enough as is, and is 10x as hard when there is an interviewer breathing
+down your neck. After solving > 1600 Leetcode problems I would recommend these tips:
+
+1) "defensive print debugging". As soon as you start to write code, start inserting print statements.
+For instance say we create an array that contains certain elements. After creating it, print it
+and run your code to check that the values match with what you expect.
+
+Dont wait to write your entire solution before you run any code! If you have mistakes,
+its going to be so much harder to debug. You should diagnose problems and debug as you go.
+
+2) Use clear debug prints. Dont just write "print(arr)".
+If you fill your code with print statements like this,
+it becomes less clear what console outputs refer to what variables.
+Label everything: print(f'array={arr}')
+
+==================================================================================
+	public ListNode reverseList(ListNode head) {
+        if (head.next == null) return head;
+
+        ListNode newHead = reverseList(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newHead;
+    }
+
+==================================================================================
+public ListNode rotateRight2(ListNode head, int k) {
+        if(head == null || head.next == null) return head;
+
+        int length = 1;
+        ListNode curr = head;
+        // get till the tail of list also find length of array
+        while (curr.next != null) {
+            curr = curr.next;
+            length++;
+        }
+        if(k % length == 0) return head;
+        curr.next = head;
+
+        // now shift our head node till previous node of our new node
+        int diff = length - (k % length);
+        for (int i = 1; i < diff; i++) {
+            head = head.next;
+        }
+        ListNode newHead = head.next;
+        head.next = null;
+        return newHead;
+    }
+
+==================================================================================
+
+//https://docs.oracle.com/javase/8/docs/api/java/util/Deque.html
+-ArrayDequeue methods :
+{
+
+The twelve methods described above are summarized in the following table:
+
+Summary of Deque methods
+First Element (Head)	Last Element (Tail)
+Throws exception	Special value	Throws exception	Special value
+Insert	addFirst(e)	offerFirst(e)	addLast(e)	offerLast(e)
+Remove	removeFirst()	pollFirst()	removeLast()	pollLast()
+Examine	getFirst()	peekFirst()	getLast()	peekLast()
+This interface extends the Queue interface. When a deque is used as a queue, FIFO (First-In-First-Out) behavior results.
+Elements are added at the end of the deque and removed from the beginning.
+The methods inherited from the Queue interface are precisely equivalent to Deque methods as indicated in the following table:
+
+Comparison of Queue and Deque methods
+
+Queue Method	Equivalent Deque Method
+add(e)			addLast(e)
+offer(e)		offerLast(e)
+remove()		removeFirst()
+poll()			pollFirst()
+element()		getFirst()
+peek()			peekFirst()
+
+
+
+Deques can also be used as LIFO (Last-In-First-Out) stacks. This interface should be used in preference to the legacy Stack class.
+When a deque is used as a stack, elements are pushed and popped from the beginning of the deque. Stack methods are precisely equivalent to Deque methods as indicated in the table below:
+
+Comparison of Stack and Deque methods
+
+Stack Method	Equivalent Deque Method
+push(e)			addFirst(e)
+pop()			removeFirst()
+peek()			peekFirst()
+
+Note that the peek method works equally well when a deque is used as a queue or a stack; in either case, elements are drawn from the beginning of the deque.
+This interface provides two methods to remove interior elements, removeFirstOccurrence and removeLastOccurrence.
+Unlike the List interface, this interface does not provide support for indexed access to elements.
+While Deque implementations are not strictly required to prohibit the insertion of null elements, they are strongly encouraged to do so.
+Users of any Deque implementations that do allow null elements are strongly encouraged not to take advantage of the ability to insert nulls.
+This is so because null is used as a special return value by various methods to indicated that the deque is empty.
+
+Deque implementations generally do not define element-based versions of the equals and hashCode methods, but instead inherit the identity-based versions from class Object.
+
+This interface is a member of the Java Collections Framework.
+
+
+}
+
+
+==================================================================================
+Random number generation
+
+int ans = (int)(Math.random() * length);
+
+here Math.random() gives a double number in the range [0, 1)
+
+==================================================================================
+
+HashMap, Hashtable, ConcurrentHashMap performance comparison :
+
+Below table summarizes the execution time of each data structure:
+
+Data structure		Execution Time (secs)
+HashMap				3.16
+ConcurrentHashMap	4.26
+Hashtable			56.27
+
+ If you notice HashMap has the best performance, however it’s not thread-safe.
+ It has a scary problem that can cause the threads to go on an infinite loop,
+ which would ultimately cause the  application’s CPU to spike up.
+
+ If you notice ConcurrentHashMap is slightly slower performing than HashMap,
+ however it’s a 100% thread safe implementation.
+
+ On the other hand Hashtable is also thread safe implementation,
+ but it’s 18 times slower than HashMap for this test scenario.
+
+==================================================================================
+LRU cache :
+
+new LinkedHashMap<Integer,String>(16, .75f, true);
+With that true you specify that you want an "access-ordered" map, not an "insertion-ordered" map.
+This means that you will get the values in the order of access (least recently accessed first).
+Both your get and put calls constitute an "access".
+
+A special constructor is provided to create a linked hash map whose order of iteration is the order in which its entries were last accessed,
+from least-recently accessed to most-recently (access-order). This kind of map is well-suited to building LRU caches.
+Invoking the put or get method results in an access to the corresponding entry (assuming it exists after the invocation completes).
+
+==================================================================================
+Equality and Hash Code: Java records handle equality and hash code calculations for you.
+The equals() and hashCode() methods are automatically generated based on the fields defined in the record.
+This simplifies the process of comparing records for equality and using them in data structures such as sets and maps.
+
+==================================================================================
+public boolean isPowerOfFour(int n) {
+        if (n <= 0) return false;
+        if (n == 1) return true;
+        double p = Math.log10(n) / Math.log10(4); // Math.log10 is faster then Math.log
+        return p - (int) p == 0;
+    }
+
+public boolean isPowerOfFour(int num) {
+        return num > 0 && (num&(num-1)) == 0 && (num & 0x55555555) != 0;
+        //0x55555555 is to get rid of those power of 2 but not power of 4
+        //so that the single 1 bit always appears at the odd position
+    }
+
+@Description("Generalized method")
+public boolean isPowerOfFour(int n) {
+        for (int i = 0; i < 31; i++) {
+            if (n == Math.pow(4, i)) return true;
+        }
+        return false;
+    }
+
+public boolean isPowerOfFour(int n) {
+        return (n & (n - 1)) == 0 && n % 3 == 1;
+}
+==================================================================================
+Properties of bitwise operations:
+The result of a & (a−1) is to change the last 1 in the binary representation of a to 0; The result of a & (-a) (equivalent to a & (∼(a−1)))
+is to keep only the last 1 of the binary representation of a, and set the remaining 1s to 0. Using these properties,
+many bit operation problems can be solved strategically.
+
+==================================================================================
+Arrays List of String to array of String only
+
+List<String> result = new ArrayList<>();
+
+String[] array = result.toArray(new String[0]);
+String[] array = result.<String>toArray(new String[0]);
+String[] array = (String[]) result2.<String>toArray();
+
+-------------------------
+
+List<Integer> to Integer[] array
+
+List<Integer> result2 = new ArrayList<>();
+Integer[] array = (Integer[]) result2.<Integer>toArray();
+
+
+==================================================================================
+for (char c = '1'; c <= '9'; c++) {
+}
 
 ==================================================================================
 
@@ -483,433 +746,4 @@ private boolean isLeapYear(int year) {
 
 
 ==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -18,7 +18,7 @@ public class QuickSort_asc_shortform {
             int PivotIndex = partition(arr, left, right);
             quickSort(arr, left, PivotIndex - 1);
             quickSort(arr, PivotIndex + 1, right);
-        }else {
+        } else {
             return;// here we did nothing to array and returned as there was single element
         }
     }
