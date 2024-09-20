@@ -1,7 +1,6 @@
 package DailyCodeChallenge.level_3;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 class DiffWaysToCompute_241 {
@@ -29,7 +28,8 @@ class DiffWaysToCompute_241 {
                         }
             }
         }
-        return res.isEmpty() ? List.of(Integer.parseInt(str)) : res;
+        if (res.isEmpty()) res.add(Integer.valueOf(str));
+        return res;
     }
 
 }

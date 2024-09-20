@@ -10,7 +10,7 @@ class DiffWaysToCompute_241_dp {
     public static void main(String[] args) {
         dp = new HashMap<>();
         DiffWaysToCompute_241_dp obj = new DiffWaysToCompute_241_dp();
-        System.out.println(obj.dfs("1+2-3+4-5+6-7+8-9+10"));
+        System.out.println(obj.dfs2("2-1-1"));
         System.out.println("dp = " + dp);
     }
 
@@ -33,8 +33,30 @@ class DiffWaysToCompute_241_dp {
                         }
             }
         }
+        if (res.isEmpty()) res.add(Integer.valueOf(str));
+        dp.put(str, res);
+        return res;
+    }
+
+    public List<Integer> dfs2(String str) {
+        if (dp.containsKey(str)) return dp.get(str);
+
+        List<Integer> res = new ArrayList<>();
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
+                for (Integer l1 : dfs2(str.substring(0, i)))
+                    for (Integer r1 : dfs2(str.substring(i + 1)))
+                        switch (str.charAt(i)) {
+                            case '+' -> res.add(l1 + r1);
+                            case '-' -> res.add(l1 - r1);
+                            case '*' -> res.add(l1 * r1);
+                            case '/' -> res.add(l1 / r1);
+                        }
+            }
+        }
         if (res.isEmpty()) {
-            res.add(Integer.parseInt(str));
+            res.add(Integer.valueOf(str));
         }
         dp.put(str, res);
         return res;
