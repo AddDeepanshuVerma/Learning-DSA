@@ -1,10 +1,13 @@
-package _17_SlidingWindow.easy_medium;
+package _17_SlidingWindow.easy_medium.FixedSize;
+
+import jdk.jfr.Description;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Description("First Negative Number in every Window of Size K | fixed size sliding window")
 class PrintFirstNegativeInteger {
     public static void main(String[] args) {
         long[] arr = {-8, 2, 3, -6, 10};

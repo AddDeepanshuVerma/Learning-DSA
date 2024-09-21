@@ -1,10 +1,12 @@
-package _17_SlidingWindow.easy_medium;
+package _17_SlidingWindow.easy_medium.FixedSize;
+
+import jdk.jfr.Description;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+@Description("Count Occurrences Of Anagrams | fixed size sliding window")
 class FindAnagrams_438_2 {
     public static void main(String[] args) {
         System.out.println(FindAnagrams_438_2.findAnagrams2("cbacbabacd", "abc"));

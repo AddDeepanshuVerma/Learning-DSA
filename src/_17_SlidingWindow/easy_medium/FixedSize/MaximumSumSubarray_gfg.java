@@ -1,8 +1,11 @@
-package _17_SlidingWindow.easy_medium;
+package _17_SlidingWindow.easy_medium.FixedSize;
+
+import jdk.jfr.Description;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Description("Maximum Sum Subarray of size k")
 class MaximumSumSubarray_gfg {
     public static void main(String[] args) {
         ArrayList<Integer> list = new ArrayList<>(List.of(100, 200, 300, 400));
