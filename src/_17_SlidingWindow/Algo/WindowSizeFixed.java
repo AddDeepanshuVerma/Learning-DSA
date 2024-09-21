@@ -5,14 +5,14 @@ package _17_SlidingWindow.Algo;
 // 2. while we'll also maintain an index if (j -i + 1) is ever touch our window size of k,then
 //      first we will store our ans and before next element sum addition. here itself we will remove
 //      ith index and increment i, that's how i and j maintains a window of size K.
-public class MaximumSubArraySum {
+public class WindowSizeFixed {
     public static void main(String[] args) {
         int[] arr = {2, 3, 1, -5, 6, 9, 2};
         int k = 4;
         System.out.println(maximumSubArraySum3(arr, k));
     }
 
-    // Sliding window main template
+    // General format for fixed size sliding window
     private static int maximumSubArraySum(int[] arr, int k) {
         int sum = 0, i = 0, ans = 0;
         int j = 0;
