@@ -2,7 +2,7 @@ package _17_SlidingWindow.easy_medium.VariableSize;
 
 import jdk.jfr.Description;
 
-@Description("Largest Subarray of sum K with non negative integers only")
+@Description("Largest Subarray of sum K (for array with non negative integers only)")
 class LenOfLongSubarr_gfg {
     public static void main(String[] args) {
         int[] arr = {1, 4, 3, 3, 5, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1};

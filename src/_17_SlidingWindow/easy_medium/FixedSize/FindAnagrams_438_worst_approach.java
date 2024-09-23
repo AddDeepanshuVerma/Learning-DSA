@@ -7,9 +7,9 @@ import java.util.Arrays;
 import java.util.List;
 
 @Description("Count Occurrences Of Anagrams | fixed size sliding window")
-class FindAnagrams_438 {
+class FindAnagrams_438_worst_approach {
     public static void main(String[] args) {
-        System.out.println(FindAnagrams_438.findAnagrams2("cbacbabacd", "abc"));
+        System.out.println(FindAnagrams_438_worst_approach.findAnagrams2("cbacbabacd", "abc"));
     }
 
     // worst approach possible - brute force approach

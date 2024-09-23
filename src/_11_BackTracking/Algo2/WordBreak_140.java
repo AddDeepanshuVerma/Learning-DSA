@@ -43,7 +43,7 @@ class WordBreak_140 {
             if (wordSet.contains(check)) {
                 // store this check string in temp list as a path of String in-case it reaches till end
                 temp.add(check);
-                // now up-to ith index e have our string available in word Dictionary, hence check further
+                // now up-to ith index we have our string available in word Dictionary, hence check further
                 // String (from i+1 index) if it does, we will have our ans in the path (stored in temp)
                 solve(arr, i + 1, temp, wordSet, res);
                 // this line get executed right after we hit base case means,
