@@ -18,12 +18,14 @@ public class QuickSort_desc_shortform {
             int PivotIndex = partition(arr, left, right);
             quickSort(arr, left, PivotIndex - 1);
             quickSort(arr, PivotIndex + 1, right);
+        } else {
+            return;// here we did nothing to array and returned as there was single element
         }
     }
 
     public static int partition(int[] arr, int firstIndex, int high) {
         int pivot = arr[firstIndex];
-        int i = firstIndex + 1;
+        int i = firstIndex;// both fine int i = firstIndex + 1 ;
         int j = high;
         while (i <= j) {
             if (arr[i] < pivot && arr[j] > pivot) swap(arr, i++, j--);
