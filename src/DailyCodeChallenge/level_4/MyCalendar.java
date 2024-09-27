@@ -1,4 +1,4 @@
-package DailyCodeChallenge.level4;
+package DailyCodeChallenge.level_4;
 
 import java.util.HashSet;
 import java.util.Set;
