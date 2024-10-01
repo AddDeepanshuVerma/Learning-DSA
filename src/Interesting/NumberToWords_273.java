@@ -9,7 +9,8 @@ class NumberToWords_273 {
     private final HashMap<Long, String> below_100 = new HashMap<>(Map.of(2L, "Twenty", 3L, "Thirty", 4L, "Forty", 5L, "Fifty", 6L, "Sixty", 7L, "Seventy", 8L, "Eighty", 9L, "Ninety"));
 
     public static void main(String[] args) {
-        long num = 1000000000000000000L;
+        long num = 989;
+        long num2 = 1000000000000000000L;
         NumberToWords_273 obj = new NumberToWords_273();
         System.out.println(obj.numberToWords(num));
     }

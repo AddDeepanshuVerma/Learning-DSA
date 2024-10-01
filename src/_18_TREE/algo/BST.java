@@ -1,6 +1,7 @@
 package _18_TREE.algo;
 
-import com.sun.jdi.Value;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BST {
 
@@ -91,6 +92,70 @@ public class BST {
         return root;
     }
 
+    private static void printInRange(Node root, int x, int y) {
+        if (root == null) {
+            return;
+        }
+
+        if (root.val >= x && root.val <= y) {
+            printInRange(root.left, x, y);
+            System.out.print(root.val + " ");
+            printInRange(root.right, x, y);
+            return;
+        }
+        if (root.val >= y) {
+            printInRange(root.left, x, y);
+        }
+        if (root.val <= x) {
+            printInRange(root.right, x, y);
+        }
+    }
+
+    private static int printInRangeSum(Node root, int low, int high) {
+        if (root == null) return 0;
+
+        int sum = 0;
+        if (root.val >= low && root.val <= high) {
+            sum += printInRangeSum(root.left, low, high);
+            sum += root.val;
+            sum += printInRangeSum(root.right, low, high);
+        } else if (root.val >= low) {
+            sum += printInRangeSum(root.left, low, high);
+        } else if (root.val <= high) {
+            sum += printInRangeSum(root.right, low, high);
+        }
+        return sum;
+    }
+
+    private static int printInRangeSum2(Node root, int low, int high) {
+        if (root == null) return 0;
+
+        int sum = 0;
+        if (root.val >= low && root.val <= high) {
+            sum += root.val;
+        }
+        if (root.val > low) {
+            sum += printInRangeSum2(root.left, low, high);
+        }
+        if (root.val < high) {
+            sum += printInRangeSum2(root.right, low, high);
+        }
+        return sum;
+    }
+
+    private static void printRoot2Leaf(Node root, List<Integer> list) {
+        if (root == null) return;
+
+        list.add(root.val);
+        if (root.left == null && root.right == null) {
+            list.forEach(n -> System.out.print(n + "->"));
+            System.out.println();
+        } else {
+            printRoot2Leaf(root.left, list);
+            printRoot2Leaf(root.right, list);
+        }
+        list.removeLast();
+    }
 
     private static Node getLMSuccessor(Node root) {
         while (root.left != null) {
@@ -100,20 +165,23 @@ public class BST {
     }
 
     public static void main(String[] args) {
-        int[] arr = {8, 9, 5, 3, 1, 4, 6, 10, 11, 14, 7};
+        int[] arr = {8, 5, 3, 6, 10, 11, 14};
         Node root = null;
         for (int val : arr) {
             root = insert(root, val);
         }
-        boolean ans = search(root, 9);
-        System.out.println(ans);
-
         inOrder(root);
+        System.out.println();
+        System.out.println(root.val);
+
+        printRoot2Leaf(root, new ArrayList<Integer>());
+        /*boolean ans = search(root, 9);
+        System.out.println(ans);*/
+        /*inOrder(root);
         root = delete(root, 8);
         System.out.println();
-        inOrder(root);
-
-/*        for (int val : arr) {
+        inOrder(root);*/
+        /*for (int val : arr) {
             System.out.println("deleting value : " + val);
             root = delete(root, val);
             inOrder(root);
@@ -123,8 +191,7 @@ public class BST {
             }
         }
         System.out.println("root = " + root);*/
-
-
-
+        /*printInRange(root, 6, 7);
+        System.out.println(printInRangeSum2(root, 6, 7));*/
     }
 }

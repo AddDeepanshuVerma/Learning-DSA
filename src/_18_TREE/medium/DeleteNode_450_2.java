@@ -23,6 +23,7 @@ class DeleteNode_450_2 {
         if (root.val < val) root.right = deleteNode(root.right, val);
         else if (root.val > val) root.left = deleteNode(root.left, val);
         else {
+            if (root.left == null && root.right == null) return null;
             if (root.left == null) return root.right;
             if (root.right == null) return root.left;
 
