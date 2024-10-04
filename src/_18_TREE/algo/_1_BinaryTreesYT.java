@@ -19,6 +19,22 @@ public class _1_BinaryTreesYT {
         }
     }
 
+    static class TreeInfo {
+        int dia;
+        int ht;
+
+        public TreeInfo(int diameter, int height) {
+            this.dia = diameter;
+            this.ht = height;
+        }
+
+        @Override
+        public String toString() {
+            return "TreeInfo{" + "diameter=" + dia + ", height=" + ht + '}';
+        }
+    }
+
+
     static class BinaryTree {
         static int index;
 
@@ -143,20 +159,6 @@ public class _1_BinaryTreesYT {
             return Math.max(diaViaRoot, Math.max(leftDia, rightDia));
         }
 
-        static class TreeInfo {
-            int dia;
-            int ht;
-
-            public TreeInfo(int diameter, int height) {
-                this.dia = diameter;
-                this.ht = height;
-            }
-
-            @Override
-            public String toString() {
-                return "TreeInfo{" + "diameter=" + dia + ", height=" + ht + '}';
-            }
-        }
 
         //TC :: O(n)
         public static TreeInfo diameterOfTree_n(Node root) {

@@ -45,6 +45,22 @@ public class _2_BST {
         inOrder(root.right);
     }
 
+    static Node delete(Node root, int val) {
+        if (root == null) return null;
+
+        if (root.val < val) root.right = delete(root.right, val);
+        else if (root.val > val) root.left = delete(root.left, val);
+        else {
+            if (root.left == null && root.right == null) return null;
+            if (root.left == null) return root.right;
+            if (root.right == null) return root.left;
+
+            root.val = getLMSuccessor(root.right).val;
+            root.right = delete(root.right, root.val);
+        }
+        return root;
+    }
+
     // with explanation
     static Node delete2(Node root, int val) {
         if (root == null) return root;
@@ -73,22 +89,6 @@ public class _2_BST {
             root.right = delete(root.right, LMS.val);
         }
 
-        return root;
-    }
-
-    static Node delete(Node root, int val) {
-        if (root == null) return null;
-
-        if (root.val < val) root.right = delete(root.right, val);
-        else if (root.val > val) root.left = delete(root.left, val);
-        else {
-            if (root.left == null && root.right == null) return null;
-            if (root.left == null) return root.right;
-            if (root.right == null) return root.left;
-
-            root.val = getLMSuccessor(root.right).val;
-            root.right = delete(root.right, root.val);
-        }
         return root;
     }
 

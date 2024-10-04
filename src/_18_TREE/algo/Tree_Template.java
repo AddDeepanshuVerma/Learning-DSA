@@ -13,7 +13,6 @@ public class Tree_Template {
         }
     }
 
-    // createPreOrderTree
     static TreeNode createTree(int[] arr) {
         index++;
         if (arr[index] == -1) return null;
@@ -37,7 +36,7 @@ public class Tree_Template {
 
     public static void main(String[] args) {
         index = -1;
-        int[] arr = {1, 2, 3, -1, -1, 4, 5, -1, -1, 6, -1, -1, 7, -1, -1};
+        int[] arr = {1, 2, 3, -1, -1, 4, -1, -1, 5, 6, -1, -1, 7, -1, -1};
         TreeNode root = createTree(arr);
         preOrderTraversal(root);
     }
