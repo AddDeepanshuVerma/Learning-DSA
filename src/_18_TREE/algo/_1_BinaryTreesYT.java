@@ -2,7 +2,7 @@ package _18_TREE.algo;
 
 import java.util.ArrayDeque;
 
-public class BinaryTreesYT {
+public class _1_BinaryTreesYT {
 
     public static class Node {
         int val;
@@ -193,7 +193,7 @@ public class BinaryTreesYT {
     public static void main(String[] args) {
         int[] nodes = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
         BinaryTree.index = -1;
-        Node root = BinaryTree.buildBinaryTree(nodes);
+//        Node root = BinaryTree.buildBinaryTree(nodes);
 //        BinaryTree.preOrder(root);
 //        BinaryTree.inOrder(root);
 //        BinaryTree.postOrder(root);

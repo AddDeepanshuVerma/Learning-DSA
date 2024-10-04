@@ -3,7 +3,7 @@ package _18_TREE.algo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BST {
+public class _2_BST {
 
     static class Node {
         int val;
