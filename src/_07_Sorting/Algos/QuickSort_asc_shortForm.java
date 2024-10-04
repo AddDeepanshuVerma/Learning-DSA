@@ -5,9 +5,9 @@ import jdk.jfr.Description;
 import java.util.Arrays;
 
 @Description("All test cases passed")
-public class QuickSort_asc_shortform {
+public class QuickSort_asc_shortForm {
     public static void main(String[] args) {
-        int[] arr = {5, 5, 5, 5, 5, 5, 5, 5, 6, 7, 8, 5, 1, 1, 2, 0, 0};
+        int[] arr = {1, 2, 3, 1, 4, 3, 2, 54, 6, 7, 8, 8, 5, 3, 2, 3, 5};
         quickSort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
 
@@ -15,9 +15,9 @@ public class QuickSort_asc_shortform {
 
     public static void quickSort(int[] arr, int left, int right) {
         if (left < right) {
-            int PivotIndex = partition(arr, left, right);
-            quickSort(arr, left, PivotIndex - 1);
-            quickSort(arr, PivotIndex + 1, right);
+            int pivotIndex = partition(arr, left, right);
+            quickSort(arr, left, pivotIndex - 1);
+            quickSort(arr, pivotIndex + 1, right);
         } else {
             return;// here we did nothing to array and returned as there was single element
         }
@@ -28,9 +28,12 @@ public class QuickSort_asc_shortform {
         int i = firstIndex;// both fine int i = firstIndex + 1 ;
         int j = high;
         while (i <= j) {
-            if (arr[i] > pivot && arr[j] < pivot) swap(arr, i++, j--);
-            if (arr[i] <= pivot) i++;
-            if (arr[j] >= pivot) j--;
+            /*if (arr[i] > pivot && arr[j] < pivot) swap(arr, i++, j--);
+            else if (arr[i] <= pivot) i++;
+            else if (arr[j] >= pivot) j--;*/
+            if (arr[i] >= pivot && arr[j] <= pivot) swap(arr, i++, j--);
+            else if (arr[i] <= pivot) i++;
+            else if (arr[j] >= pivot) j--;
         }
         swap(arr, j, firstIndex);
         return j;
