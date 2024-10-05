@@ -12,7 +12,7 @@ class PrintFirstNegativeInteger {
     public static void main(String[] args) {
         long[] arr = {-8, 2, 3, -6, 10};
         PrintFirstNegativeInteger obj = new PrintFirstNegativeInteger();
-        long[] longs = obj.printFirstNegativeInteger(arr, 5, 2);
+        long[] longs = obj.printFirstNegativeInteger2(arr, 5, 2);
         System.out.println(Arrays.toString(longs));
     }
 

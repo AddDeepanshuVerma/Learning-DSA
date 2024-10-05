@@ -9,7 +9,7 @@ class MaxSlidingWindow_239 {
     public static void main(String[] args) {
         MaxSlidingWindow_239 obj = new MaxSlidingWindow_239();
         int[] nums = {9, 10, 9, -7, -4, -8, 2, -6};
-        System.out.println(Arrays.toString(obj.maxSlidingWindow2(nums, 5)));
+        System.out.println(Arrays.toString(obj.maxSlidingWindow3(nums, 5)));
     }
 
     //    [1  3  -1] -3  5  3  6  7       3

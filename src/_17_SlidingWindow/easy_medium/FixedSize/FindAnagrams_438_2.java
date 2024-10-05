@@ -9,7 +9,7 @@ import java.util.List;
 @Description("Count Occurrences Of Anagrams | fixed size sliding window")
 class FindAnagrams_438_2 {
     public static void main(String[] args) {
-        System.out.println(FindAnagrams_438_2.findAnagrams2("abcabc", "abc"));
+        System.out.println(FindAnagrams_438_2.findAnagrams2("abcaabc", "abca"));
     }
 
     public static List<Integer> findAnagrams(String s, String p) {
