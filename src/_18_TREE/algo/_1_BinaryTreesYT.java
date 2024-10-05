@@ -152,9 +152,9 @@ public class _1_BinaryTreesYT {
         public static int diameterOfTree_n2(Node root) {
             if (root == null) return 0;
 
-            int leftDia = diameterOfTree_n2(root.left);     // max diameter lies in left subtree itself
-            int rightDia = diameterOfTree_n2(root.right);   // max diameter lies in right subtree itself
-            int diaViaRoot = diameterOfTreeVaiRoot(root); // max diameter lies via root itself
+            int leftDia = diameterOfTree_n2(root.left);     //  max diameter lies in left subtree itself
+            int rightDia = diameterOfTree_n2(root.right);   //  max diameter lies in right subtree itself
+            int diaViaRoot = diameterOfTreeVaiRoot(root);   //  max diameter lies via root itself
 
             return Math.max(diaViaRoot, Math.max(leftDia, rightDia));
         }
