@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 
-public class _5_PostOrder_Iterative {
+public class    _5_PostOrder_Iterative {
     static int index;
 
     static class TreeNode {
@@ -52,6 +52,7 @@ public class _5_PostOrder_Iterative {
         while (!stack1.isEmpty()) {
             TreeNode temp = stack1.pollFirst();
             stack2.addFirst(temp);
+
             if (temp.left != null) stack1.addFirst(temp.left);
             if (temp.right != null) stack1.addFirst(temp.right);
         }

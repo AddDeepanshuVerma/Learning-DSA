@@ -38,8 +38,8 @@ public class _3_PreOrder_Iterative {
     static List<Integer> preOrder(TreeNode root) {
         List<Integer> ans = new ArrayList<>();
         if (root == null) return ans;
-
         ArrayDeque<TreeNode> stack = new ArrayDeque<>();
+
         stack.addFirst(root);
 
         while (!stack.isEmpty()) {
