@@ -1,41 +1,39 @@
 package _18_TREE.algo;
 
-public class BinarySearchTree {
+public class _31_BinarySearchTree {
+    Node root;
+
+    public static class Node {
+        int val;
+        Node left;
+        Node right;
+
+        public Node(int val) {
+            this.val = val;
+        }
+    }
+
     public static void main(String[] args) {
-        BinarySearchTree bt = new BinarySearchTree();
+        _31_BinarySearchTree bt = new _31_BinarySearchTree();
         int[] arr = {8, 7, 12, 15, 2, 5, 11};
 
         for (int num : arr) bt.insert(num);
         bt.printTree();
     }
-    /* ================================================== */
 
-    Node root;
-
-    public static class Node {
-        int data;
-        Node left;
-        Node right;
-
-        public Node(int data) {
-            this.data = data;
-        }
+    public void insert(int val) {
+        root = solve(root, val);
     }
 
-    public void insert(int data) {
-        root = solve(root, data);
-    }
-
-    private Node solve(Node root, int data) {
+    private Node solve(Node root, int val) {
         if (root == null) {
-            return new Node(data);
+            return new Node(val);
         }
 
-        int val = root.data;
-        if (data < val) {
-            root.left = solve(root.left, data);
+        if (val < root.val) {
+            root.left = solve(root.left, val);
         } else {
-            root.right = solve(root.right, data);
+            root.right = solve(root.right, val);
         }
         return root;
     }
@@ -53,7 +51,7 @@ public class BinarySearchTree {
 
     private void preOrder(Node root) {
         if (root == null) return;
-        System.out.print(root.data + " ");
+        System.out.print(root.val + " ");
         preOrder(root.left);
         preOrder(root.right);
     }
@@ -61,7 +59,7 @@ public class BinarySearchTree {
     private void inOrder(Node root) {
         if (root == null) return;
         inOrder(root.left);
-        System.out.print(root.data + " ");
+        System.out.print(root.val + " ");
         inOrder(root.right);
     }
 
@@ -69,7 +67,7 @@ public class BinarySearchTree {
         if (root == null) return;
         postOrder(root.left);
         postOrder(root.right);
-        System.out.print(root.data + " ");
+        System.out.print(root.val + " ");
     }
 
 }
