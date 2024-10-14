@@ -1,7 +1,5 @@
 package DailyCodeChallenge.level_3;
 
-import com.sun.source.tree.IfTree;
-
 import java.util.ArrayList;
 import java.util.List;
 

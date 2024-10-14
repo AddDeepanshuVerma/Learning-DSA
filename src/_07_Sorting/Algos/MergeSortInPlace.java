@@ -23,25 +23,11 @@ public class MergeSortInPlace {
         int[] res = new int[end - start];
         int i = start, j = mid, k = 0;
         while (i < mid && j < end) {
-            if (arr[i] < arr[j]) {
-                res[k] = arr[i];
-                i++;
-            } else {
-                res[k] = arr[j];
-                j++;
-            }
-            k++;
+            if (arr[i] < arr[j]) res[k++] = arr[i++];
+            else res[k++] = arr[j++];
         }
-        while (i < mid) {
-            res[k] = arr[i];
-            i++;
-            k++;
-        }
-        while (j < end) {
-            res[k] = arr[j];
-            j++;
-            k++;
-        }
+        while (i < mid) res[k++] = arr[i++];
+        while (j < end) res[k++] = arr[j++];
         System.arraycopy(res, 0, arr, start, res.length);
     }
 }
