@@ -12,7 +12,6 @@ class _18_BuildTree_105_Pre_In {
         int inS = 0, inE = inorder.length - 1;
 
         TreeNode root = solve(preorder, preS, preE, inorder, inS, inE, map);
-
         return root;
     }
 

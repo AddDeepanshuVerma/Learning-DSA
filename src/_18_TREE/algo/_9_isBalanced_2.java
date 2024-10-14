@@ -1,8 +1,5 @@
 package _18_TREE.algo;
 
-import javax.management.MXBean;
-import java.util.HexFormat;
-
 public class _9_isBalanced_2 {
 
     public static class TreeNode {

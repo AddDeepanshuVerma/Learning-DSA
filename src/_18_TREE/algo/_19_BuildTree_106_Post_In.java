@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 class _19_BuildTree_106_Post_In {
     static TreeNode buildTree(int[] inorder, int[] postorder) {
+
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < inorder.length; i++) map.put(inorder[i], i);
 
