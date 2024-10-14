@@ -13,7 +13,7 @@ class _38_IsValidBST_98 {
         return dfs(root.left, minNode, root) && dfs(root.right, root, maxNode);
     }
 
-    // ====================================================
+    // =======================Below is universal approach=============================
 
     public boolean isValidBST2(TreeNode root) {
         return dfs2(root, Long.MIN_VALUE, Long.MAX_VALUE);

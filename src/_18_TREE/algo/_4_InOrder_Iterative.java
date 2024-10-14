@@ -50,7 +50,7 @@ public class _4_InOrder_Iterative {
         // stack to print the last L's right element.
         while (true) {
             if (root != null) {
-                stack.addFirst(root);
+                stack.push(root);
                 root = root.left;
             } else {
                 if (stack.isEmpty()) break;

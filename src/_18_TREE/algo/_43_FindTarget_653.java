@@ -14,7 +14,7 @@ class _43_FindTarget_653 {
     private boolean helper(TreeNode root, int k) {
         if (root == null) return false;
 
-        if (set.contains(Math.abs(k - root.val))) return true;
+        if (set.contains(k - root.val)) return true;
         set.add(root.val);
 
         return helper(root.left, k) || helper(root.right, k);

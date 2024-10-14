@@ -157,6 +157,29 @@ public class _2_BST {
         list.removeLast();
     }
 
+    public List<String> binaryTreePaths(Node root) {
+        List<String> list = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
+        dfs(root, list, sb);
+        return list;
+    }
+
+    private void dfs(Node root, List<String> list, StringBuilder sb) {
+        if (root == null) {
+            return;
+        }
+        int len = sb.length();
+        sb.append(root.val);
+        if (root.left == null && root.right == null) {
+            list.add(sb.toString());
+        }
+
+        sb.append("->");
+        dfs(root.left, list, sb);
+        dfs(root.right, list, sb);
+        sb.setLength(len);
+    }
+
     private static Node getLMSuccessor(Node root) {
         while (root.left != null) {
             root = root.left;
