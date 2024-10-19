@@ -7,17 +7,17 @@ import java.util.List;
 public class BoundaryTraversal_code360 {
     static ArrayList<Integer> boundary(TreeNode root) {
         ArrayList<Integer> ans = new ArrayList<>();
-        // if root is null, return empty list
+        // if node is null, return empty list
         if (root == null) return ans;
 
-        // if root is leaf node, return just list with root value
+        // if node is leaf node, return just list with node value
         if (isLeaf(root)) {
             ans.add(root.data);
             return ans;
         }
 
-        // now we will go through root->left->leaf->right
-        // 1. store root value in list
+        // now we will go through node->left->leaf->right
+        // 1. store node value in list
         ans.add(root.data);
         // 2. store all left boundary nodes value in the list
         addLeftBoundary(root, ans);

@@ -25,20 +25,20 @@ class DeleteNode_450 {
         } else if (root.val > val) {
             root.left = deleteNode(root.left, val);
         } else {
-            //case 1 : this root has no child
+            //case 1 : this node has no child
             if (root.left == null && root.right == null) return null;
 
-            //case 2 : this root has one child left/right
+            //case 2 : this node has one child left/right
             if (root.left == null) {
                 return root.right;
             } else if (root.right == null) {
                 return root.left;
             }
 
-            //case 3 : this root has both child
+            //case 3 : this node has both child
             TreeNode LMS = getLMSuccessor(root.right);
             root.val = LMS.val;
-            root.right = deleteNode(root.right, LMS.val); // update the right tree of curr root.
+            root.right = deleteNode(root.right, LMS.val); // update the right tree of curr node.
         }
         return root;
     }

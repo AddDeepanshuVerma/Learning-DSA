@@ -35,7 +35,7 @@ class ValidateBinaryTreeNodes_1361_3 {
 
         }
 
-        // 2. now check only a single node from 0 till n-1 has no parent (which will be root)
+        // 2. now check only a single node from 0 till n-1 has no parent (which will be node)
         int root = -1;
         for (int i = 0; i < n; i++) {
             if (!childToParent.containsKey(i)) {

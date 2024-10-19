@@ -15,8 +15,8 @@ class ValidateBinaryTreeNodes_1361_2 {
 //        A valid tree must have nodes with only one parent and exactly one node with no parent.
         /*Here we need to check below points
          * 1. Every child should have single parent
-         * 2. a single node must not have any parent (root node)
-         * 3. Tree that needs to be generated from the valid root, must contain all remaining nodes
+         * 2. a single node must not have any parent (node node)
+         * 3. Tree that needs to be generated from the valid node, must contain all remaining nodes
          *    , there should not be more than one tree disconnected*/
 
 //        1. let's create a child-to-parent map and each child must have single entry of their parent
@@ -44,7 +44,7 @@ class ValidateBinaryTreeNodes_1361_2 {
         }
         // now it's confirmed that every child had single parent
 
-        // 2. now check only a single node from 0 till n-1 has no parent (which will be root)
+        // 2. now check only a single node from 0 till n-1 has no parent (which will be node)
         int root = -1;
         for (int i = 0; i < n; i++) {
             if (!childToParent.containsKey(i)) {
@@ -53,7 +53,7 @@ class ValidateBinaryTreeNodes_1361_2 {
             }
         }
         if (root == -1) return false;
-        // now we got the value of applicable root value
+        // now we got the value of applicable node value
 
         //3. in this step we will do a traversal and keep counting number of nodes occurred while count
         // which should be equal to n
