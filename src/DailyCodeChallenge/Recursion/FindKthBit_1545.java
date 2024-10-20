@@ -1,4 +1,4 @@
-package DailyCodeChallenge;
+package DailyCodeChallenge.Recursion;
 
 class FindKthBit_1545 {
     public static void main(String[] args) {
