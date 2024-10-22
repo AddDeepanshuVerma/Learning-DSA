@@ -1,12 +1,11 @@
-package DailyCodeChallenge;
+package DailyCodeChallenge.BackTracking;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 
-class MaxUniqueSplit_1593 {
+class MaxUniqueSplit_1593_2 {
     public static void main(String[] args) {
-        MaxUniqueSplit_1593 obj = new MaxUniqueSplit_1593();
-        System.out.println(obj.maxUniqueSplit("ababccc"));
+        MaxUniqueSplit_1593_2 obj = new MaxUniqueSplit_1593_2();
+        System.out.println(obj.maxUniqueSplit("acefofckpkjfcdcp"));
 //        System.out.println(obj.maxUniqueSplit("aba"));
 //        System.out.println(obj.maxUniqueSplit("aa"));
     }
@@ -22,12 +21,15 @@ class MaxUniqueSplit_1593 {
 
     private void dfs(char[] arr, int index, HashSet<String> set) {
         if (index >= arr.length) {
+//            System.out.println("set = " + set);
             maxCount = Math.max(maxCount, set.size());
             return;
         }
+//        if (set.size() + (arr.length - index) <= maxCount) return;
 
         String prefix = "";
         for (int i = index; i < arr.length; i++) {
+            if (set.size() + (arr.length - index) <= maxCount) break;
             prefix += arr[i];
             if (!set.contains(prefix)) {
                 set.add(prefix);
