@@ -1,8 +1,6 @@
-package _18_TREE.algo;
+package Interesting;
 
-import jdk.jfr.Description;
-
-class _23_LowestCommonAncestor_236 {
+class LowestCommonAncestor_236 {
 
     /*  Note : there will always be p and q node available in the Tree
         means : even if we find just one element it means second one was his successor somewhere,

@@ -1,6 +1,4 @@
-package _18_TREE.algo;
-
-import jdk.jfr.Description;
+package _18_TREE.medium;
 
 class _23_LowestCommonAncestor_236 {
 
