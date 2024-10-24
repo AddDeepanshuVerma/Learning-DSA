@@ -1,4 +1,4 @@
-package DailyCodeChallenge;
+package DailyCodeChallenge.Greedy;
 
 import java.util.PriorityQueue;
 
