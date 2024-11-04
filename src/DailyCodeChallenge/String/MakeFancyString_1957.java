@@ -1,4 +1,4 @@
-package DailyCodeChallenge;
+package DailyCodeChallenge.String;
 
 class MakeFancyString_1957 {
     public String makeFancyString(String s) {

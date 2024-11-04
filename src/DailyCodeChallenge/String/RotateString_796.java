@@ -1,6 +1,4 @@
-package DailyCodeChallenge;
-
-import java.util.Arrays;
+package DailyCodeChallenge.String;
 
 class RotateString_796 {
     public static void main(String[] args) {
