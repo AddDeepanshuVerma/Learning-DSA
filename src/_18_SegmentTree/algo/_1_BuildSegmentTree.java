@@ -2,7 +2,7 @@ package _18_SegmentTree.algo;
 
 import java.util.Arrays;
 
-public class BuildSegmentTree {
+public class _1_BuildSegmentTree {
     static int[] nums, segmentTree;
 
     public static void main(String[] args) {
