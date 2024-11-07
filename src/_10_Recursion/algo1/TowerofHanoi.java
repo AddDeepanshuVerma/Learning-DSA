@@ -6,7 +6,7 @@ public class TowerofHanoi {
         final String s = "source";
         final String h = "helper";
         final String d = "destsn";
-        int num = 4;
+        int num = 30;
         TOH(num, s, d, h);
     }
 
