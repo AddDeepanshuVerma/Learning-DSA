@@ -1,6 +1,6 @@
 package _20_DynamicProgramming._1_01_KnapSack.Algo;
 
-public class _01_KnapSack_TopDown_2 {
+public class _05_KnapSack_TopDown_2 {
     public static void main(String[] args) {
         int[] val = {1, 3, 4, 5}; // value of item, index wise
         int[] wt = {1, 2, 3, 4}; // weight of item, index wise

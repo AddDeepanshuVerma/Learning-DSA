@@ -1,8 +1,6 @@
 package _20_DynamicProgramming._1_01_KnapSack.Algo;
 
-import java.util.Arrays;
-
-public class _01_KnapSack_TopDown {
+public class _04_KnapSack_TopDown {
     public static void main(String[] args) {
         int[] val = {1, 3, 4, 5}; // value of item, index wise
         int[] wt = {1, 2, 3, 4}; // weight of item, index wise
@@ -19,12 +17,12 @@ public class _01_KnapSack_TopDown {
         // fill base case if val == 0 || capacity == 0 then profit is 0
         int[][] t = new int[n + 1][capacity + 1];
 
-        for (int i = 0; i < n + 1; i++)
-            for (int j = 0; j <= capacity; j++)
-                if (i == 0 || j == 0) t[i][j] = 0;
+//        for (int i = 0; i < n + 1; i++)
+//            for (int j = 0; j <= capacity; j++)
+//                if (i == 0 || j == 0) t[i][j] = 0;
 
         for (int i = 1; i < n + 1; i++) {
-            for (int j = 1; j <= capacity; j++) {
+            for (int j = 0; j < capacity + 1; j++) {
                 int exclude = t[i - 1][j];
                 int include = 0;
                 if (wt[i - 1] <= j) {

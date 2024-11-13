@@ -2,7 +2,7 @@ package _20_DynamicProgramming._1_01_KnapSack.Algo;
 
 import java.util.Arrays;
 
-public class _01_KnapSack_Memoize_2 {
+public class _03_KnapSack_Memoize_2 {
     static int[][] dp;
 
     public static void main(String[] args) {
