@@ -1,4 +1,4 @@
-package DailyCodeChallenge;
+package DailyCodeChallenge.BitManipulation;
 
 class MinChanges_2914 {
     public static void main(String[] args) {
