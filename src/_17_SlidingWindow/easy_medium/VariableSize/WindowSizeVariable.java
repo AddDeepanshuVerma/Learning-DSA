@@ -57,7 +57,7 @@ class WindowSizeVariable {
         return ans;
     }
 
-    // Stage 2 : Compact way
+    // Stage 2 : Compact way ✨✨✨✨
     private static int lengthOfLongestSubArray3(int[] arr, int n, int k) {
         int i = 0, sum = 0;
 //        int ans = Integer.MIN_VALUE;
@@ -70,7 +70,7 @@ class WindowSizeVariable {
         return ans;
     }
 
-    // Stage 3 : Compact way
+    // Stage 3 : Compact way ✨✨✨✨
     private static int lengthOfLongestSubArray4(int[] arr, int n, int k) {
         int ans = Integer.MIN_VALUE;
         for (int j = 0, i = 0, sum = 0; j < n; j++) {
