@@ -707,14 +707,14 @@ List<String> result = new ArrayList<>();
 
 String[] array = result.toArray(new String[0]);
 String[] array = result.<String>toArray(new String[0]);
-String[] array = (String[]) result2.<String>toArray();
+String[] array = (String[]) result.<String>toArray();
 
 -------------------------
 
 List<Integer> to Integer[] array
 
-List<Integer> result2 = new ArrayList<>();
-Integer[] array = (Integer[]) result2.<Integer>toArray();
+List<Integer> result = new ArrayList<>();
+Integer[] array = (Integer[]) result.<Integer>toArray();
 
 
 ==================================================================================
@@ -723,6 +723,222 @@ for (char c = '1'; c <= '9'; c++) {
 
 ==================================================================================
 
+// Priority queue to order numbers using the custom comparison function
+        PriorityQueue<String> maxHeap = new PriorityQueue<>(
+            new Comparator<String>() {
+                @Override
+                public int compare(String first, String second) {
+                    return (second + first).compareTo(first + second);
+                }
+            }
+        );
+
+
+==================================================================================
+HashMaps with String as key, List as value can also be a way to achieve memoization in dp problems
+
+ep :
+
+HashMap<String, List<Integer>> dp;
+public List<Integer> dfs(String str) {
+        if (dp.containsKey(str))
+			return dp.get(str);
+		-------------------
+		-------------------
+        dp.put(str, res);
+        return res;
+    }
+
+==================================================================================
+max  = 13
+list = [1,10,11,12,13,2,3,4,5,6,7,8,9]
+public List<Integer> lexicalOrder(int max) {
+	List<Integer> list = new ArrayList<>();
+	for (int num = 1; num <= 9; num++) {
+		dfs(num, max, list);
+	}
+	return list;
+}
+
+private void dfs(int num, int max, List<Integer> list) {
+	if (num > max) return;
+	list.add(num);
+
+	for (int j = 0; j <= 9; j++) {
+		dfs((num * 10) + j, max, list);
+	}
+}
+
+==================================================================================
+This problem can be solved using Trie,
+
+Want to learn Trie refer the problems below:
+
+LC 139
+LC 208
+LC 211
+LC 421 (Bitwise Trie)
+As always start with Wiki : https://en.wikipedia.org/wiki/Trie
+
+==================================================================================
+Length of digits in integer  = (int) (Math.log10(num) + 1);
+
+==================================================================================
+
+public class WaysToSortAList {
+    public static void main(String[] args) {
+        ArrayList<ArrayList<Integer>> offlineQueries = new ArrayList<ArrayList<Integer>>();
+        for (int i = 4; i >= 0; i--) {
+            ArrayList<Integer> temp = new ArrayList<Integer>();
+            temp.add(i);
+            temp.add(i - 2);
+            temp.add(i - 3);
+            offlineQueries.add(temp);
+        }
+
+        offlineQueries.forEach(System.out::println);
+        System.out.println("=======================");
+
+        Collections.sort(offlineQueries, new Comparator<ArrayList<Integer>>() {
+            @Override
+            public int compare(ArrayList<Integer> a, ArrayList<Integer> b) {
+                return a.get(0).compareTo(b.get(0));
+            }
+        });
+        offlineQueries.sort(Comparator.comparing(a -> a.get(0)));
+        offlineQueries.sort(Comparator.comparing(ArrayList::getFirst));
+        offlineQueries.sort((a, b) -> a.get(0).compareTo(b.get(0)));
+        offlineQueries.sort((a, b) -> a.getFirst() - b.getFirst());
+
+        offlineQueries.forEach(System.out::println);
+    }
+}
+==================================================================================
+I spent 4+ hours collecting these 31 DP problems of all patterns yesterday.
+
+If you solve all of these, you can crack any DP questions during your technical interview.
+
+The following problems cover DP topics:
+- strings
+- distinct ways
+- decision-making
+- merging intervals
+
+1. 	https://lnkd.in/dpHdnbJg
+2. 	https://lnkd.in/dftf72nm
+3. 	https://lnkd.in/dHAn6fGW
+4. 	https://lnkd.in/dUnJw4bS
+5. 	https://lnkd.in/dM8aTrRv
+6. 	https://lnkd.in/dpSTcynK
+7. 	https://lnkd.in/db9ZagnM
+8. 	https://lnkd.in/dxUK2cCv
+9. 	https://lnkd.in/dEiTg5yB
+10. https://lnkd.in/dk3zMy3s
+11. https://lnkd.in/dKhAzfUa
+12. https://lnkd.in/diWt_CpT
+13. https://lnkd.in/dF4U5ZsV
+14. https://lnkd.in/dMst59zc
+15. https://lnkd.in/dHx3CTdg
+16. https://lnkd.in/de4ZDJVh
+17. https://lnkd.in/dA_Nh7VC
+18. https://lnkd.in/dqiJp2Xh
+19. https://lnkd.in/dp3eXBVq
+20. https://lnkd.in/dy3eKPbv
+21. https://lnkd.in/dEsEBt_Q
+22. https://lnkd.in/e4RQJKp9
+23. https://lnkd.in/eMWwamx6
+24. https://lnkd.in/eJGp9HVm
+25. https://lnkd.in/e5wG-QVi
+26. https://lnkd.in/evvgFQUr
+27. https://lnkd.in/eNzFCGqa
+28. https://lnkd.in/e7uMNKMz
+29. https://https://lnkd.in/ew2eSnwG
+30. https://https://lnkd.in/etEA-Y58
+31. https://lnkd.in/euYg-hyv
+
+–
+P.S: Don’t forget to share with others. Drop more resources in the comments, and let’s add value!
+
+==================================================================================
+We can check A string all prefixes are present as a word in Trie
+in a single log(str.length) run
+Like at every step :
+			1. char should be there
+			2. At the end of every char isWord should be marked as true
+
+==================================================================================
+TreeMap<Integer, Set<String>> treeMap = new TreeMap<>();
+
+treeMap.computeIfAbsent(key, k -> new HashSet<>()).add(key);
+treeMap.lastEntry().getValue().iterator().next();
+treeMap.firstEntry().getValue().iterator().next();
+
+==================================================================================
+Map<String, Integer> map;
+merge method returns updated value of that key
+
+Integer newCount = map.merge(key, 1, Integer::sum);
+Integer newCount = map.merge(key, -1, Integer::sum);
+
+==================================================================================
+// 100, 11 ( if we want to change the order / do the action : send a positive integer response  to sort function
+System.out.println("11100".compareTo("10011"));  //  1 (b + a).compareTo(a + b) use this
+System.out.println("10011".compareTo("11100"));  // -1 (a + b).compareTo(b + a)
+
+list.sort((a, b) -> (b + a).compareTo(a + b)); send positive num of want to change
+
+==================================================================================
+public String replace(CharSequence target, CharSequence replacement){
+	}
+
+s = s.replace("AB", "");
+
+==================================================================================
+
+Find 2 ^ num :
+
+            return (int) (Math.pow(2, num) - 1);
+            return (2 << num) - 1;
+
+==================================================================================
+To find ceil number :
+
+public static double ceil(double a) {
+        return StrictMath.ceil(a); // default impl. delegates to StrictMath
+    }
+
+int ceil = (int) Math.ceil((double) number / 3);
+int ceil = (int) Math.ceil(number / 3.0);
+
+
+==================================================================================
+
+Collections.emptyList()
+
+HashMap<Integer, List<Integer>> map = new HashMap<>()
+map.getOrDefault(key, Collections.emptyList())
+
+map.lowerKey(num);			//returns key < specified key
+map.higherKey(num);			//returns key > specified key
+
+map.floorKey(num); 			//returns key <= specified key
+map.ceilingKey(num);		//returns key >= specified key
+
+
+The `higherKey()`method is used to return the least key strictly greater than the given key, or null.
+The `lowerKey()` method is used to return the greatest key strictly less than the given key, or null.
+
+
+
+==================================================================================
+int base = grid[r][c];
+        for (int i = r; i < r + n; i++) {
+            for (int j = c; j < c + n; j++) {
+
+if there was n*n matrix, and we are checking from 0 + r row and 0 + c column
+and now our new length of that matrix in nN
+then in our source grid we will check from i = 0 + r to i < r + n
+
 
 ==================================================================================
 
@@ -737,13 +953,3 @@ for (char c = '1'; c <= '9'; c++) {
 
 
 ==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
-
-==================================================================================
-
