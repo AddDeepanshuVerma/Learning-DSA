@@ -10,7 +10,7 @@ public class _35_CountSubsetSum_tab_1D {
         int[] dp = new int[sum + 1];
         dp[0] = 1;
         for (int i = 0; i < nums.length; i++) {
-            for (int j = sum; j >= 1; j--) {
+            for (int j = sum; j >= 0; j--) {
                 if (j - nums[i] >= 0) dp[j] += dp[j - nums[i]];
             }
         }

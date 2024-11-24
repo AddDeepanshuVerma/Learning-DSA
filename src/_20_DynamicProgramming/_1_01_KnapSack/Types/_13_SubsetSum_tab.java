@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 class _13_SubsetSum_tab {
     public static void main(String[] args) {
-        int[] nums = {6, 1, 2};
-        System.out.println(isSubsetSum(nums, 6));
+        int[] nums = {8, 9, 9};
+        System.out.println(isSubsetSum3(nums, 6));
 
     }
 
@@ -74,6 +74,7 @@ class _13_SubsetSum_tab {
                 t[i][sum] = include || exclude;
             }
         }
+        Arrays.stream(t).map(Arrays::toString).forEach(System.out::println);
         return t[arr.length][target];
     }
 }

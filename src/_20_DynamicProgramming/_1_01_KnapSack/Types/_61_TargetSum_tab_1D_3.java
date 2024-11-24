@@ -7,19 +7,19 @@ class _61_TargetSum_tab_1D_3 {
 
     }
 
-    public static int findTargetSumWays(int[] nums, int target) {
+    public static int findTargetSumWays(int[] nums, int diff) {
         int sum = 0;
         for (int n : nums)
             sum += n;
-        return sum < target || (target + sum) % 2 > 0 ? 0 : subsetSum(nums, (target + sum) >>> 1);
+        return sum < diff || (diff + sum) % 2 > 0 ? 0 : subsetSum(nums, (diff + sum) >>> 1);
     }
 
     public static int subsetSum(int[] nums, int s) {
-        int[] dp = new int[s + 1];
-        dp[0] = 1;
+        int[] t = new int[s + 1];
+        t[0] = 1;
         for (int n : nums)
             for (int i = s; i >= n; i--)
-                dp[i] += dp[i - n];
-        return dp[s];
+                t[i] += t[i - n];
+        return t[s];
     }
 }
