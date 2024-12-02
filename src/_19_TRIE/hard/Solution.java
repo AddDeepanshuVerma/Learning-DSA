@@ -20,7 +20,7 @@ class Node {
     void put(int ind, Node node) {
         links[ind] = node;
     }
-};
+}
 
 class Trie {
     private static Node root;
