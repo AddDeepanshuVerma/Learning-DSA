@@ -26,7 +26,7 @@ class Solution_2554 {
     public static int maxCount2(int[] banned, int n, int maxSum) {
         Set<Integer> ban = new HashSet<>();
         for (int num : banned) {
-            if (num <= n) ban.add(num);
+            if (num <= n) ban.add(num); // removed extra elements
         }
 
         int count = 0;
