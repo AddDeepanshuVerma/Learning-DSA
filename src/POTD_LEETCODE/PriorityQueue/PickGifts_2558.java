@@ -1,4 +1,4 @@
-package POTD_LEETCODE;
+package POTD_LEETCODE.PriorityQueue;
 
 import java.util.PriorityQueue;
 
