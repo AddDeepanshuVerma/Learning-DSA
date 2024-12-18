@@ -5,8 +5,9 @@ import java.util.PriorityQueue;
 
 class RepeatLimitedString_2182 {
     public static void main(String[] args) {
+
         String s = "aaaabbbbccccdddd";
-        System.out.println(repeatLimitedString(s, 2));
+        System.out.println(repeatLimitedString2(s, 2));
     }
 
     public static String repeatLimitedString(String s, int repeatLimit) {
@@ -54,9 +55,45 @@ class RepeatLimitedString_2182 {
             }
         }
         System.out.println(sb);
+
         return sb.toString();
     }
 
     record Pair(char getKey, int getValue) {
     }
+
+    //======================= clean code =======================
+    public static String repeatLimitedString2(String s, int repeatLimit) {
+        int[] count = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            count[s.charAt(i) - 'a']++;
+        }
+        StringBuilder sb = new StringBuilder();
+
+        int i = 25;
+        while (i >= 0) {
+            if (count[i] == 0) {
+                i--;
+                continue;
+            }
+            int freq = Math.min(repeatLimit, count[i]);
+            count[i] -= freq;
+//            while (freq-- > 0) {
+//                sb.append((char) ('a' + i));
+//            }
+            sb.append(String.valueOf((char) ('a' + i)).repeat(freq));
+            if (count[i] > 0) {
+                int j = i - 1;
+                while (j >= 0 && count[j] == 0) {
+                    j--;
+                }
+                if (j < 0) break;
+                sb.append((char) ('a' + j));
+                count[j]--;
+            }
+        }
+
+        return sb.toString();
+    }
+
 }
