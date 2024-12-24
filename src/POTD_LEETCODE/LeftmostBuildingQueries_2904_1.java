@@ -1,30 +1,44 @@
 package POTD_LEETCODE;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.PriorityQueue;
+
 class LeftmostBuildingQueries_2904_1 {
     public int[] leftmostBuildingQueries(int[] heights, int[][] queries) {
-        int n = queries.length;
-        int[] ans = new int[n];
+        List<List<List<Integer>>> storeQueries = new ArrayList<>(heights.length);
+        for (int i = 0; i < heights.length; i++)
+            storeQueries.add(new ArrayList<>());
+        PriorityQueue<List<Integer>> maxIndex = new PriorityQueue<>((a, b) -> a.get(0) - b.get(0));
+        int[] result = new int[queries.length];
+        Arrays.fill(result, -1);
 
-        for (int i = 0; i < n; i++) {
-            ans[i] = findIndex(heights, queries[i][0], queries[i][1]);
-        }
-        return ans;
-    }
-
-    private int findIndex(int[] arr, int i, int j) {
-        if (i == j) return i;
-        if (i < j && arr[i] < arr[j]) return j;
-        if (j < i && arr[j] < arr[i]) return i;
-
-        // now we need to find an index greater then max(i, j)th & with value greater then max(arr[i], arr[j])
-        int maxVal = Math.max(arr[i], arr[j]);
-        int maxIndex = Math.max(i, j);
-
-        for (int k = maxIndex + 1; k < arr.length; k++) {
-            if (arr[k] > maxVal) {
-                return k;
+        //Store the mappings for all queries in storeQueries.
+        for (int currQuery = 0; currQuery < queries.length; currQuery++) {
+            int a = queries[currQuery][0], b = queries[currQuery][1];
+            if (a < b && heights[a] < heights[b]) {
+                result[currQuery] = b;
+            } else if (a > b && heights[a] > heights[b]) {
+                result[currQuery] = a;
+            } else if (a == b) {
+                result[currQuery] = a;
+            } else {
+                storeQueries.get(Math.max(a, b)).add(Arrays.asList(Math.max(heights[a], heights[b]), currQuery));
             }
         }
-        return -1;
+
+        //If the priority queue's minimum pair value is less than the current index of height, it is an answer to the query.
+        for (int index = 0; index < heights.length; index++) {
+            while (!maxIndex.isEmpty() && maxIndex.peek().get(0) < heights[index]) {
+                result[maxIndex.peek().get(1)] = index;
+                maxIndex.poll();
+            }
+            // Push the with their maximum index as the current index in the priority queue.
+            for (List<Integer> element : storeQueries.get(index)) {
+                maxIndex.offer(element);
+            }
+        }
+        return result;
     }
 }
