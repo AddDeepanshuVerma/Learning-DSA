@@ -1,4 +1,4 @@
-package _20_DynamicProgramming._3_LongestCommonSubSequence.Algo;
+package _20_DynamicProgramming._3_LongestCommonSubSequence.Types;
 
 public class _9ShortestCommonSuperSubsequencePrint_topDown {
     public static void main(String[] args) {
