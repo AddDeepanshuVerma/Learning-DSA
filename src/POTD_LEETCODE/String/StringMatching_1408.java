@@ -1,4 +1,4 @@
-package POTD_LEETCODE;
+package POTD_LEETCODE.String;
 
 import java.util.ArrayList;
 import java.util.List;
