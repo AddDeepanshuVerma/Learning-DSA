@@ -1,7 +1,6 @@
-package POTD_LEETCODE;
+package POTD_LEETCODE.HashTable;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 class WordSubsets_916_2 {
