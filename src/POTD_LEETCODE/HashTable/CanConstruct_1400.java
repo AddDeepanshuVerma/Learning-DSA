@@ -1,4 +1,4 @@
-package POTD_LEETCODE;
+package POTD_LEETCODE.HashTable;
 
 class CanConstruct_1400 {
     public boolean canConstruct(String s, int k) {
