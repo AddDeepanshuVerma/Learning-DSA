@@ -1,6 +1,6 @@
-package POTD_LEETCODE;
+package POTD_LEETCODE.SegmentTree;
 
-class LeftmostBuildingQueries_2904 {
+class LeftmostBuildingQueries_2940_TLE {
     public int[] leftmostBuildingQueries(int[] heights, int[][] queries) {
         int n = queries.length;
         int[] ans = new int[n];

@@ -1,11 +1,11 @@
-package POTD_LEETCODE;
+package POTD_LEETCODE.SegmentTree;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.PriorityQueue;
 
-class LeftmostBuildingQueries_2904_1 {
+class LeftmostBuildingQueries_2940_copied {
     public int[] leftmostBuildingQueries(int[] heights, int[][] queries) {
         List<List<List<Integer>>> storeQueries = new ArrayList<>(heights.length);
         for (int i = 0; i < heights.length; i++)

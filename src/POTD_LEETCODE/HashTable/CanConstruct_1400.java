@@ -1,7 +1,12 @@
 package POTD_LEETCODE.HashTable;
 
 class CanConstruct_1400 {
-    public boolean canConstruct(String s, int k) {
+    public static void main(String[] args) {
+        String s = "aabbcc";
+        System.out.println(canConstruct(s, 1));
+    }
+
+    public static boolean canConstruct(String s, int k) {
         int maximumAllowed = s.length();
         if (k == maximumAllowed) return true;
         if (k > maximumAllowed) return false;
