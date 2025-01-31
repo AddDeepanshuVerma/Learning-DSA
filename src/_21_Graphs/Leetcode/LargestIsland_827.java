@@ -1,5 +1,7 @@
 package _21_Graphs.Leetcode;
 
+import jdk.jfr.Description;
+
 class LargestIsland_827 {
     public static void main(String[] args) {
         int[][] grid = {{1, 0}, {0, 1}};
@@ -7,6 +9,7 @@ class LargestIsland_827 {
         System.out.println(obj.largestIsland(grid));
     }
 
+    @Description("Got TLE")
     public int largestIsland(int[][] grid) {
         /*
          * Steps :
