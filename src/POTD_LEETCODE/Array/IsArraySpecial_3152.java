@@ -2,7 +2,17 @@ package POTD_LEETCODE.Array;
 
 import jdk.jfr.Description;
 
+import java.util.Arrays;
+
 class IsArraySpecial_3152 {
+    public static void main(String[] args) {
+        int[] nums = {4, 3, 1, 6};
+        int[][] queries = {{0, 2}, {2, 3}};
+
+        var obj = new IsArraySpecial_3152();
+        boolean[] ans = obj.isArraySpecial2(nums, queries);
+        System.out.println("ans = " + Arrays.toString(ans));
+    }
 
     @Description("Time complexity is ~ n^2")
     public boolean[] isArraySpecial(int[] nums, int[][] queries) {
