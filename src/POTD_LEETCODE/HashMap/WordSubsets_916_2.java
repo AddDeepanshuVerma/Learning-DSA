@@ -1,4 +1,4 @@
-package POTD_LEETCODE.HashTable;
+package POTD_LEETCODE.HashMap;
 
 import java.util.ArrayList;
 import java.util.List;

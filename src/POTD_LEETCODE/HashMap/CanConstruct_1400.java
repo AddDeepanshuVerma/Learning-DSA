@@ -1,4 +1,4 @@
-package POTD_LEETCODE.HashTable;
+package POTD_LEETCODE.HashMap;
 
 class CanConstruct_1400 {
     public static void main(String[] args) {
