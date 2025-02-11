@@ -6,7 +6,7 @@ class RemoveOccurrences_1910 {
     public static void main(String[] args) {
         String s = "daabcbaabcbc";
         String part = "abc";
-        System.out.println(removeOccurrences3(s, part));
+        System.out.println(removeOccurrences1(s, part));
     }
 
     @Description("Works as expected by prob")
