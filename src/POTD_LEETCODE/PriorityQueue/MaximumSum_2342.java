@@ -1,7 +1,6 @@
-package POTD_LEETCODE;
+package POTD_LEETCODE.PriorityQueue;
 
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.PriorityQueue;
 
