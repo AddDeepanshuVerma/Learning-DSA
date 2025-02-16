@@ -37,6 +37,7 @@ class PunishmentNumber_2698 {
         if (curr > target) return false;
         if (s.isEmpty()) return curr == target;
         boolean flag = false;
+
         for (int k = 0; k < s.length(); k++) {
             String left = s.substring(0, k + 1);
             String right = s.substring(k + 1);
