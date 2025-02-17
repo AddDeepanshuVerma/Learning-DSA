@@ -19,7 +19,8 @@ public class _3_RangeSumQuery {
     }
 
     private static int rangeSum(int start, int end) {
-        return rangeSumQuery(start, end, 0, 0, nums.length - 1);
+        int rangeSum = rangeSumQuery(start, end, 0, 0, nums.length - 1);
+        return rangeSum;
     }
 
     private static int rangeSumQuery(int start, int end, int i, int l, int r) {

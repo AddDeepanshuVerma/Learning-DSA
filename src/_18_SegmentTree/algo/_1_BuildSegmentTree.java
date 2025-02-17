@@ -27,6 +27,7 @@ public class _1_BuildSegmentTree {
         buildSegmentTree(2 * i + 1, l, mid);
         buildSegmentTree(2 * i + 2, mid + 1, r);
 
-        segmentTree[i] = segmentTree[2 * i + 1] + segmentTree[2 * i + 2]; // here + makes the segment tree : a range sum segment tree
+        // here + makes the segment tree : a range sum segment tree
+        segmentTree[i] = segmentTree[2 * i + 1] + segmentTree[2 * i + 2];
     }
 }

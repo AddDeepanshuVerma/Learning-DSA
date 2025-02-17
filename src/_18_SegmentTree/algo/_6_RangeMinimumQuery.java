@@ -20,7 +20,6 @@ public class _6_RangeMinimumQuery {
         st[i] = Math.min(st[2 * i + 1], st[2 * i + 2]);
     }
 
-
     /* The function returns the min element in the range from l and r */
     public static int RMQ(int[] st, int n, int l, int r) {
         return getMinInRange(l, r, 0, 0, n - 1, st);
