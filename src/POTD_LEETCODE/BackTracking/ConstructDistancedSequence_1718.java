@@ -52,4 +52,35 @@ class ConstructDistancedSequence_1718 {
         }
         return false;
     }
+
+    private static boolean dfs2(int n, Set<Integer> seen) {
+        if (seen.size() == n) {
+            return true;
+        }
+
+        for (int num = n; num >= 1; num--) {
+            if (!seen.contains(num)) {
+                int idx = 0;
+                while (idx < ans.length && ans[idx] != -1) idx++;
+                seen.add(num);
+                if (num != 1) {
+                    if (ans[idx] == -1 && (idx + num) < ans.length && ans[idx + num] == -1) {
+                        ans[idx] = num;
+                        ans[idx + num] = num;
+                        if (dfs2(n, seen)) return true;
+                        ans[idx] = -1;
+                        ans[idx + num] = -1;
+                    }
+                } else {
+                    if (ans[idx] == -1) {
+                        ans[idx] = num;
+                        if (dfs2(n, seen)) return true;
+                        ans[idx] = -1;
+                    }
+                }
+                seen.remove(num);
+            }
+        }
+        return false;
+    }
 }
