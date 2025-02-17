@@ -3,7 +3,7 @@ package POTD_LEETCODE.SubSequence;
 import java.util.Arrays;
 
 class LengthOfLIS_2407 {
-    public int lengthOfLIS(int[] nums, int k) {
+    public int lengthOfLongestIncreasingSubSequence(int[] nums, int k) {
         // Same description as : src/DailyCodeChallenge/SubSequence/LengthOfLIS_300_BottomUP.java
 
         int n = nums.length;

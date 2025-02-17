@@ -7,7 +7,8 @@ import java.util.Arrays;
 @Description("All test cases passed")
 public class QuickSort_asc {
     public static void main(String[] args) {
-        int[] arr = {5, 5, 5, 5, 5, 5, 5, 5, 6, 7, 8, 5, 1, 1, 2, 0, 0};
+//        int[] arr = {5, 5, 5, 5, 5, 5, 5, 5, 6, 7, 8, 5, 1, 1, 2, 0, 0};
+        int[] arr = {81, 76, 40};
         quickSort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
 

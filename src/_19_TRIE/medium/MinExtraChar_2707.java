@@ -5,7 +5,6 @@ import java.util.Arrays;
 class MinExtraChar_2707 {
     static int[] dp;
 
-
     private static class Node {
         private boolean isWord;
         private final Node[] links = new Node[26];

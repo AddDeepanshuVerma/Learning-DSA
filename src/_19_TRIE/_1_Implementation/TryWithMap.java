@@ -18,9 +18,10 @@ public class TryWithMap {
     public void insert(String data) {
         Node temp = root;
         for (char ch : data.toCharArray()) {
-            if (!temp.children.containsKey(ch)) {
+            /*if (!temp.children.containsKey(ch)) {
                 temp.children.put(ch, new Node());
-            }
+            }*/
+            temp.children.putIfAbsent(ch, new Node());
             temp = temp.children.get(ch);
         }
         temp.isEnd = true;

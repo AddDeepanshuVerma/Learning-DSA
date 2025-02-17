@@ -32,6 +32,7 @@ public class _7_UpdateRangeInSegmentTree {
     }
 
     private static void updateRangeInSegmentTree(int from, int till, int increase) {
+        // adding required parameters
         updateRange(from, till, 0, 0, nums.length - 1, increase);
     }
 

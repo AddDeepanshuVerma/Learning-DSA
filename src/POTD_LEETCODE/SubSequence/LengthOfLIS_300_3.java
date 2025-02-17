@@ -14,17 +14,17 @@ class LengthOfLIS_300_3 {
         return dfs(currIndex, previousIndex, nums);
     }
 
-    private int dfs(int index, int p, int[] nums) {
+    private int dfs(int index, int prevIndex, int[] nums) {
         if (index == nums.length) return 0;
 
-        if (p != -1 && dp[index][p] != -1) return dp[index][p];
+        if (prevIndex != -1 && dp[index][prevIndex] != -1) return dp[index][prevIndex];
 
-        int skip = dfs(index + 1, p, nums);
-        if (p == -1 || nums[p] < nums[index]) {
+        int skip = dfs(index + 1, prevIndex, nums);
+        if (prevIndex == -1 || nums[prevIndex] < nums[index]) {
             skip = Math.max(skip, 1 + dfs(index + 1, index, nums)); // Math.max(skip, take );
         }
 
-        return p != -1 ? dp[index][p] = skip : skip;
+        return prevIndex != -1 ? dp[index][prevIndex] = skip : skip;
     }
 
 }

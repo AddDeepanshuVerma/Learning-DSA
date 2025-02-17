@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class _01_Rod_Cutting_Problem_2D {
     public static void main(String[] args) {
         int[] price = {42, 68, 35, 1, 70};
-        System.out.println(cutRod(price, 5));
+        System.out.println(cutRod2(price, 5));
     }
 
 	// to understand the problem where changing curr problem to knapSack problem

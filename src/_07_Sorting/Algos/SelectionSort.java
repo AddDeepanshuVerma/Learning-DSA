@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SelectionSort {
     public static void main(String[] args) {
-        int[] arr = {10, 3, 12, 7, 2, 11, 9,-20};
+        int[] arr = {10, 3, 12, 7, 2, 11, 9, -20};
         selectionSort(arr);
         System.out.println(Arrays.toString(arr));
     }
@@ -19,7 +19,7 @@ public class SelectionSort {
                     index = j;
                 }
             }
-            swap( arr , index , arr.length - i - 1);
+            swap(arr, index, arr.length - i - 1);
         }
     }
 
