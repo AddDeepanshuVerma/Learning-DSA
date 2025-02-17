@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.stream.Collectors;
 
+//lexical order question
 class largestNumber_179 {
     public static void main(String[] args) {
         int[] arr = {3, 30, 34, 5, 9};
