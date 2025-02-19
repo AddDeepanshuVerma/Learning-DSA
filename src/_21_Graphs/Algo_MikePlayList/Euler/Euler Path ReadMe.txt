@@ -1,7 +1,4 @@
-
-
-
-                                                                Euler Path
+                                            Euler Path
 
 A Graph has Euler path :
     If we can go through all the given edges from one to another vertices while
