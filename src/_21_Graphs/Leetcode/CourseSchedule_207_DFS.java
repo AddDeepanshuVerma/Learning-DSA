@@ -31,20 +31,6 @@ class CourseSchedule_207_DFS {
         return true;
     }
 
-    private boolean checkIfCycleExists(int curr, boolean[] seen, HashMap<Integer, List<Integer>> adj, boolean[] visited) {
-        visited[curr] = true;
-        seen[curr] = true;
-        for (Integer next : adj.getOrDefault(curr, Collections.emptyList())) {
-            if (!visited[next] && checkIfCycleExists(next, seen, adj, visited)) {
-                return true;
-            } else if (seen[next]) {
-                return true;
-            }
-        }
-        seen[curr] = false;
-        return false;
-    }
-
     private boolean detectCycle(int curr, boolean[] seen, HashMap<Integer, List<Integer>> adj, boolean[] visited) {
         visited[curr] = true;
         seen[curr] = true;
@@ -52,6 +38,20 @@ class CourseSchedule_207_DFS {
             if (seen[next]) return true; // cycle detected
             if (visited[next]) continue;
             if (detectCycle(next, seen, adj, visited)) {
+                return true;
+            }
+        }
+        seen[curr] = false;
+        return false;
+    }
+
+    private boolean checkIfCycleExists(int curr, boolean[] seen, HashMap<Integer, List<Integer>> adj, boolean[] visited) {
+        visited[curr] = true;
+        seen[curr] = true;
+        for (Integer next : adj.getOrDefault(curr, Collections.emptyList())) {
+            if (!visited[next] && checkIfCycleExists(next, seen, adj, visited)) {
+                return true;
+            } else if (seen[next]) {
                 return true;
             }
         }

@@ -1,4 +1,4 @@
-package _21_Graphs.Algo_MikePlayList.Euler;
+package _21_Graphs.Euler;
 
 import java.util.HashSet;
 import java.util.List;
