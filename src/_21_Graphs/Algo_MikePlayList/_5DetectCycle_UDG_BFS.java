@@ -6,8 +6,10 @@ import java.util.ArrayList;
 public class _5DetectCycle_UDG_BFS {
     public boolean isCycle(ArrayList<ArrayList<Integer>> adj) {
         /* KeyPoints :
-         * 1. As it is an UDG, we need to make sure that parent node of curr node does not prove to be a cycle hence maintain a Parent NODE
-         * 2. As we are doing BFS & we need to maintain a parent node for each node, hence we have to store a pair in queue (pair : {node, its parent})
+         * 1. As it is an UDG, we need to make sure that parent node of curr node does not prove to be a cycle
+         * hence maintain a Parent NODE
+         * 2. As we are doing BFS & we need to maintain a parent node for each node,
+         * hence we have to store a pair in queue (pair : {node, its parent})
          * */
         int vertices = adj.size();
         boolean[] visited = new boolean[vertices];

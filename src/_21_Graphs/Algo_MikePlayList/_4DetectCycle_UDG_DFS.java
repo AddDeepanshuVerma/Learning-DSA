@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class _4DetectCycle_UDG_DFS {
     public boolean isCycle(ArrayList<ArrayList<Integer>> adj) {
         /* KeyPoints :
-         * 1. As it is an UDG, we need to make sure that parent node of curr node does not prove to be a cycle hence maintain a Parent NODE
+         * 1. As it is an UDG, we need to make sure that parent node of curr node does not prove to be a cycle
+         * hence maintain a Parent NODE
          * */
         int vertices = adj.size();
         boolean[] visited = new boolean[vertices];
