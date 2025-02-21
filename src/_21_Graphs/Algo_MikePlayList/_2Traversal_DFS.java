@@ -28,6 +28,17 @@ public class _2Traversal_DFS {
         return ans;
     }
 
+    private static void dfs(int curr, ArrayList<ArrayList<Integer>> adj, boolean[] visited, ArrayList<Integer> ans) {
+        if (visited[curr]) return;
+
+        visited[curr] = true;
+        ans.add(curr);
+
+        for (Integer next : adj.get(curr)) {
+            dfs(next, adj, visited, ans);
+        }
+    }
+
     private static void dfs(int curr, HashMap<Integer, List<Integer>> adj, boolean[] visited, ArrayList<Integer> ans) {
         if (visited[curr]) {
             return;
@@ -36,17 +47,6 @@ public class _2Traversal_DFS {
         ans.add(curr);
 
         for (Integer next : adj.getOrDefault(curr, Collections.emptyList())) {
-            dfs(next, adj, visited, ans);
-        }
-    }
-
-    private static void dfs(int curr, ArrayList<ArrayList<Integer>> adj, boolean[] visited, ArrayList<Integer> ans) {
-        if (visited[curr]) return;
-
-        visited[curr] = true;
-        ans.add(curr);
-
-        for (Integer next : adj.get(curr)) {
             dfs(next, adj, visited, ans);
         }
     }
