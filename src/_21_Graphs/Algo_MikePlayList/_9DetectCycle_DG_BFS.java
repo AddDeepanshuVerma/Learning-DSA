@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class _9DetectCycle_DG_BFS {
+
     public static void main(String[] args) {
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         adj.add(new ArrayList<>(List.of(1)));
