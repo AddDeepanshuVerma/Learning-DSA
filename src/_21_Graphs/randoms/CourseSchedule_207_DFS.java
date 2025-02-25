@@ -1,4 +1,4 @@
-package _21_Graphs.Leetcode;
+package _21_Graphs.randoms;
 
 import java.util.ArrayList;
 import java.util.Collections;
