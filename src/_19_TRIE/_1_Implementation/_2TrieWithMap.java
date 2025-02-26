@@ -3,10 +3,10 @@ package _19_TRIE._1_Implementation;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TryWithMap {
+public class _2TrieWithMap {
     final Node root;
 
-    public TryWithMap() {
+    public _2TrieWithMap() {
         root = new Node();
     }
 

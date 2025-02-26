@@ -1,9 +1,9 @@
 package _19_TRIE._1_Implementation;
 
-public class Try {
+public class _1Trie {
     private final Node root;
 
-    public Try() {
+    public _1Trie() {
         root = new Node();
     }
 

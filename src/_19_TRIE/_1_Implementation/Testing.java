@@ -2,7 +2,7 @@ package _19_TRIE._1_Implementation;
 
 public class Testing {
     public static void main(String[] args) {
-        Trie obj1 = new Trie();
+        _3Trie obj1 = new _3Trie();
         obj1.insert("deep");
         System.out.println("Added \"deep\" in the dictionary");
         System.out.println("Contains deepanshu ?    : " + obj1.search("deepanshu"));
@@ -10,7 +10,7 @@ public class Testing {
 
         System.out.println("=========");
 
-        Try obj2 = new Try();
+        _1Trie obj2 = new _1Trie();
         obj2.insert("deep");
         System.out.println("Added \"deep\" in the dictionary");
         System.out.println("Contains deepanshu ?    : " + obj2.search("deepanshu"));
@@ -18,7 +18,7 @@ public class Testing {
 
         System.out.println("=========");
 
-        TryWithMap obj3 = new TryWithMap();
+        _2TrieWithMap obj3 = new _2TrieWithMap();
         obj3.insert("deep");
         System.out.println("Added \"deep\" in the dictionary");
         System.out.println("Contains deepanshu ?    : " + obj3.search("deepanshu"));
