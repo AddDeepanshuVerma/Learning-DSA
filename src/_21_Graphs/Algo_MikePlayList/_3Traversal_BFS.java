@@ -7,14 +7,13 @@ public class _3Traversal_BFS {
         int[][] edges = {{2, 3, 1}, {0}, {0, 4}, {0}, {2}};
         List<List<Integer>> adj = List.of(List.of(2, 3, 1), List.of(0), List.of(0, 4), List.of(0), List.of(2));
 
-        ArrayList<Integer> dfs = dfsOfGraph(adj);
+        ArrayList<Integer> dfs = bfsOfGraph(adj);
         System.out.println("dfs = " + dfs);
     }
 
     // ========================= using adj Lists(map) =========================
-
-    private static ArrayList<Integer> dfsOfGraph(List<List<Integer>> adj) {
-        // create map ( tho we can use the given structure as well)
+    private static ArrayList<Integer> bfsOfGraph(List<List<Integer>> adj) {
+        // create map (tho we can use the given structure as well)
         HashMap<Integer, List<Integer>> map = new HashMap<>();
         for (int u = 0; u < adj.size(); u++) {
             for (Integer v : adj.get(u)) {
@@ -44,7 +43,6 @@ public class _3Traversal_BFS {
     }
 
     // ========================= using adj matrix =========================
-
     public ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
         // code here
         return solve(V, adj);
