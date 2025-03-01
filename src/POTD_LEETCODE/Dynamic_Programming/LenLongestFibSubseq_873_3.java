@@ -1,20 +1,22 @@
 package POTD_LEETCODE.Dynamic_Programming;
 
-import java.util.HashSet;
+import java.util.HashMap;
 
-class LenLongestFibSubseq_873_4 {
+class LenLongestFibSubseq_873_3 {
+
+    private static HashMap<Integer, Integer> map;
 
     public static void main(String[] args) {
         int[] arr = {1, 3, 4, 7, 10, 11, 12, 18, 23, 35};
         System.out.println(lenLongestFibSubseq(arr));
     }
 
-    private static HashSet<Integer> map;
-
     public static int lenLongestFibSubseq(int[] arr) {
         // {element, index}
-        map = new HashSet<>();
-        for (int j : arr) map.add(j);
+        map = new HashMap<>();
+        for (int i = 0; i < arr.length; i++) {
+            map.put(arr[i], i);
+        }
 
         int count = dfs(0, -1, -1, arr.length, arr);
         return count > 2 ? count : 0;
@@ -35,10 +37,9 @@ class LenLongestFibSubseq_873_4 {
                 }
             }
         } else {
-            while (map.contains(pp + p)) {
-                count++;
-                p += pp;
-                pp = p - pp;
+            if (map.containsKey(pp + p)) {
+                int index = map.get(pp + p);
+                count = Math.max(count, 1 + dfs(index + 1, p, pp + p, n, arr));
             }
         }
 
