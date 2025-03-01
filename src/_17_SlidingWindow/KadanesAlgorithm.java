@@ -1,3 +1,5 @@
+package _17_SlidingWindow;
+
 class KadanesAlgorithm {
     public static void main(String[] args) {
         var obj = new KadanesAlgorithm();
