@@ -1,9 +1,9 @@
 package _21_Graphs.Leetcode;
 
-class MakeConnected_1319_optimal {
+class _7MakeConnected_1319_optimal {
     public static void main(String[] args) {
         int[][] connections = {{0, 1}, {0, 2}, {3, 4}, {2, 3}};
-        var obj = new MakeConnected_1319_optimal();
+        var obj = new _7MakeConnected_1319_optimal();
         System.out.println(obj.makeConnected(5, connections));
     }
 

@@ -2,7 +2,7 @@ package _21_Graphs.Leetcode;
 
 import jdk.jfr.Description;
 
-class EquationsPossible_990_3 {
+class _6EquationsPossible_990_3 {
     int[] parent;
 
     int find(int i) {

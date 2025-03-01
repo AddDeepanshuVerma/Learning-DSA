@@ -46,7 +46,7 @@ public class _9DetectCycle_DG_BFS {
         int count = 0; // count the number of nodes getting explored
         while (!q.isEmpty()) {
             int u = q.poll();
-            count++; // this node is explored
+            count++; // this first is explored
 
             for (Integer v : adj.get(u)) {
                 inDegree[v]--;

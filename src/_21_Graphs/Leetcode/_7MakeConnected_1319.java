@@ -2,7 +2,7 @@ package _21_Graphs.Leetcode;
 
 import java.util.HashSet;
 
-class MakeConnected_1319 {
+class _7MakeConnected_1319 {
     /*
      * Steps:
      * first check if the given cables will be enough or not
@@ -36,7 +36,7 @@ class MakeConnected_1319 {
 
     public static void main(String[] args) {
         int[][] connections = {{0, 1}, {0, 2}, {3, 4}, {2, 3}};
-        var obj = new MakeConnected_1319();
+        var obj = new _7MakeConnected_1319();
         System.out.println(obj.makeConnected(5, connections));
     }
 

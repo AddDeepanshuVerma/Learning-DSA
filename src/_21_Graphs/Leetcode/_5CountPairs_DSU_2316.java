@@ -2,7 +2,7 @@ package _21_Graphs.Leetcode;
 
 import java.util.HashMap;
 
-class CountPairs_DSU_2316 {
+class _5CountPairs_DSU_2316 {
     int[] parent;
 
     int find(int i) {

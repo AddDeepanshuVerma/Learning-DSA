@@ -1,6 +1,6 @@
 package _21_Graphs.Leetcode;
 
-class EquationsPossible_990_2 {
+class _6EquationsPossible_990_2 {
     int[] parent;
 
     int find(int i) {

@@ -13,7 +13,7 @@ public class _7TopologicalSort_DFS {
         * 4. WE CAN APPLY TOPOLOGICAL SORT IN A DAG (DIRECTED ACYCLIC GRAPH).
         * WTD:
         * Here in topological sort we sort the nodes in such way that it satisfy any edge in the given graph
-        * Means : we first store the children of node and then store the children in the stack, later just pop the stack to a list.
+        * Means : we first store the children of first and then store the children in the stack, later just pop the stack to a list.
         * */
 
         int vertices = adj.size();
@@ -45,7 +45,7 @@ public class _7TopologicalSort_DFS {
         /*
          * KeyPoints
          * Here in topological sort we sort the nodes in such way that it satisfy any edge in the given graph
-         * Means : we first store the children of node and then store the children in the stack, later just pop the stack to a list.
+         * Means : we first store the children of first and then store the children in the stack, later just pop the stack to a list.
          * To do the same : we store the elements on first index each time, it someHow replicated the BFS waves.
          * */
         int vertices = adj.size();

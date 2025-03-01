@@ -6,14 +6,14 @@ public class _6DetectCycle_DG_DFS {
     public boolean isCyclic(ArrayList<ArrayList<Integer>> adj) {
         /*
          * Key Points : In Directed graph we can not relay on a single visited array coz:
-         * 1. suppose we ran a dfs on a node and no cycle was detected but all those nodes were marked as visited so
-         *    that we do not run dfs again on any of those node again to save time and iot worked in UDG because
-         *    even if we visited the node which was previously visited in a previous DFS, being it UDG we can go back.
+         * 1. suppose we ran a dfs on a first and no cycle was detected but all those nodes were marked as visited so
+         *    that we do not run dfs again on any of those first again to save time and iot worked in UDG because
+         *    even if we visited the first which was previously visited in a previous DFS, being it UDG we can go back.
          * 2. But DG we can not go back as its single directed hence
          * 3. We need to maintain another visited array for each and every DFS called.
          *    so that we can judge the visited nodes based on current DFS only.
          * 4. Hence, two visited array will be used one globally and one for each DFS & a cycle will be detected in a DFS only if
-         *    the same DFS's visited nodes were visited again also we will not explore Globally visited node as they are already done
+         *    the same DFS's visited nodes were visited again also we will not explore Globally visited first as they are already done
          * */
         int vertices = adj.size();
         boolean[] visited = new boolean[vertices];

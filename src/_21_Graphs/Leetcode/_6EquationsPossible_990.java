@@ -1,6 +1,6 @@
 package _21_Graphs.Leetcode;
 
-class EquationsPossible_990 {
+class _6EquationsPossible_990 {
     int[] parent;
     int[] rank;
 
