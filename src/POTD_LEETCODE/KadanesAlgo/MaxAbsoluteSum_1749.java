@@ -1,4 +1,4 @@
-package POTD_LEETCODE;
+package POTD_LEETCODE.KadanesAlgo;
 
 class MaxAbsoluteSum_1749 {
     public int maxAbsoluteSum(int[] nums) {

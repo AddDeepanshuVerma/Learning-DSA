@@ -14,9 +14,9 @@ public class QuickSort_asc {
 
     static void quickSort(int[] arr, int left, int right) {
         if (left < right) {
-            int PivotIndex = partition(arr, left, right);
-            quickSort(arr, left, PivotIndex - 1);
-            quickSort(arr, PivotIndex + 1, right);
+            int pivotIndex = partition(arr, left, right);
+            quickSort(arr, left, pivotIndex - 1);
+            quickSort(arr, pivotIndex + 1, right);
         }
     }
 
