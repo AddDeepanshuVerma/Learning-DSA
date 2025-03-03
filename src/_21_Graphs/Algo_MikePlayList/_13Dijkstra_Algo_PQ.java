@@ -23,6 +23,7 @@ public class _13Dijkstra_Algo_PQ {
     }
 
     /*
+     * Definition : "FIND THE SHORTEST PATH FORM A SINGLE SOURCE TO ALL REMAINING VERTICES"
      * KeyPoints :
      * Brief : Dijkstra Algo is nothing but simple BFS but put the element in que again
      * only if we are getting better answer then previous one Where we maintain
@@ -55,5 +56,6 @@ public class _13Dijkstra_Algo_PQ {
         return weight;
     }
 
-    record Pair(Integer node, Integer weight) {}
+    record Pair(Integer node, Integer weight) {
+    }
 }
