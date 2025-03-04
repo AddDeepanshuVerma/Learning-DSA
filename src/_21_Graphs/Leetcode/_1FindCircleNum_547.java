@@ -4,6 +4,7 @@ import java.util.*;
 
 class _1FindCircleNum_547 {
     public static void main(String[] args) {
+
         int[][] isConnected = {{1, 1, 1}, {1, 1, 0}, {1, 0, 1}};
         System.out.println(findCircleNum(isConnected));
     }
