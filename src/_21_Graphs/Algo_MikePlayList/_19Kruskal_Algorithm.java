@@ -4,7 +4,8 @@ import java.util.Arrays;
 
 public class _19Kruskal_Algorithm {
     /*
-     * DEF: Used to get the sum of minimum spanning tree (Kruskal Algorithm === Priority queue + DSU)
+     * DEF: Used to get the sum of minimum spanning tree (Kruskal Algorithm === weight sorted edges + DSU)
+     * Kruskal's algorithm is designed for undirected graphs. It does not work for directed graphs
      * How:
      * 1. We arrange all the given edges in following manner : List of {u, v, w} and sort them based on weight to process low w first.
      * 2. Now we will take those min weights out 1 by 1 and if they do not belong to same component, union them & add its w in sum

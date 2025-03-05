@@ -1,11 +1,11 @@
-package _21_Graphs.Euler;
+package _21_Graphs.Algo_MikePlayList;
 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-class Solution_Euler {
+class _20_Euler_Path {
     /* Problem Statement :
     An Eulerian Path is a path in graph that visits every edge exactly once.
     An Eulerian Circuit is an Eulerian Path which starts and ends on the same vertex.
@@ -20,7 +20,7 @@ class Solution_Euler {
         // here 0 points to (1,2), 1 points to (0,2) & 2 points to (0,1)
 
         /* Solution :
-         *   First need to check if all non-zero degree vertices are connected : true : false;
+         *   First need to check if all non-zero degree vertices are connected ? continue further checks : return non-euler graph;
          *   Now find how many vertices has odd number of degrees
          *   If odd num of degrees == 0 => Euler circuit
          *   If odd num of degrees == 2 => Euler Path

@@ -5,7 +5,11 @@ import java.util.PriorityQueue;
 
 public class _17Minimum_Spanning_Tree {
     /*
-     * Spanning Tree : A subGraph of a given Graph: G(V,E) with V: vertices & E Edges is called spanning tree
+     * A minimum spanning tree (MST) is always defined for an undirected graph.
+     * Definition : A minimum spanning tree (MST) or minimum weight spanning tree is a subset of the edges of a connected,
+     *              edge-weighted undirected graph that connects all the vertices together, without any cycles
+     *              and with the minimum possible total edge weight.
+     * Spanning Tree : A subGraph of a given unDirected Graph: G(V,E) with V: vertices & E Edges is called spanning tree
      *                 When it is connected & has all the Vertices and V-1 number of edges
      *                 Hence it will be something like a linkedList with some nonCyclic branches.
      * A Graph can have multiple Spanning Tree but the one with minimum total weight is called : Minimum Spanning Tree (MST)

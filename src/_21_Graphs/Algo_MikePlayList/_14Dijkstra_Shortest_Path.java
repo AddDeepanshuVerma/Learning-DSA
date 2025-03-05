@@ -4,10 +4,6 @@ import java.util.*;
 
 public class _14Dijkstra_Shortest_Path {
 
-    public static void main(String[] args) {
-
-    }
-
     public List<Integer> shortestPath(int n, int m, int edges[][]) {
         //  Code Here.
         HashMap<Integer, List<Pair>> adj = new HashMap<>();

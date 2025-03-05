@@ -1,10 +1,10 @@
-package _21_Graphs.Euler;
+package _21_Graphs.Algo_MikePlayList;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-class Solution_Euler_compact {
+class _20_Euler_Path_compact {
     public int isEulerCircuit(int V, List<Integer>[] adj) {
         if (!isConnected(V, adj)) return 0;
 
@@ -33,10 +33,11 @@ class Solution_Euler_compact {
         Set<Integer> visited = new HashSet<>();
         dfs(adj, nonZeroDegreeVertex, visited);
 
-        // now if there is any vertex which is nonZeroDegree and not visited then there are 2 separate graph & we'll return false
+        // now if there is any vertex which is nonZeroDegree and not visited then there are 2 separate component with edges
+        // Hence we can not form an Euler Path so return false.
         for (int i = 0; i < v; i++) {
             if (!visited.contains(i) && !adj[i].isEmpty()) {
-                return false; // two separate graphs found hence no euler
+                return false; // two separate components with edges found hence no euler
             }
         }
         return true;

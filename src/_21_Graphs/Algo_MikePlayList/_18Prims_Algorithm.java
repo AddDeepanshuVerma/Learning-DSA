@@ -9,6 +9,7 @@ public class _18Prims_Algorithm {
         System.out.println(prims_Algorithm(5, 7, adj));
     }
 
+    //Prim's algorithm is designed for undirected graphs. It does not work for directed graphs
     static int prims_Algorithm(int V, int E, HashMap<Integer, List<Pair>> adj) {
         int nv = adj.size();
         PriorityQueue<Trio> pq = new PriorityQueue<>((a, b) -> a.weight - b.weight); //{weight, currNode}
