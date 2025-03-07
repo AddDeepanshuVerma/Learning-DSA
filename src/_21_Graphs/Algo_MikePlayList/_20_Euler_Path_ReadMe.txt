@@ -39,5 +39,6 @@ Brief on how to solve : Steps to check weather a Graph is Non-Euler/Semi-Euler/E
 
 Now GFG question can be solved : https://www.geeksforgeeks.org/problems/euler-circuit-and-path/1
 
-		
+NOTE : ABOVE WE ARE TALKING ABOUT DEGREES AS IT IS A UNDIRECTED GRAPH (IN UDG THERE IS NOTHING LIKE IN/OUT DEGREE)
+
 						

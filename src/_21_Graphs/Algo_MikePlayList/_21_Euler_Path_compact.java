@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-class _20_Euler_Path_compact {
+class _21_Euler_Path_compact {
     public int isEulerCircuit(int V, List<Integer>[] adj) {
         if (!isConnected(V, adj)) return 0;
 

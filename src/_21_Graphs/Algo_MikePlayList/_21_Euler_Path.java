@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-class _20_Euler_Path {
+class _21_Euler_Path {
     /* Problem Statement :
     An Eulerian Path is a path in graph that visits every edge exactly once.
     An Eulerian Circuit is an Eulerian Path which starts and ends on the same vertex.

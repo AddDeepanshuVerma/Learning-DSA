@@ -23,8 +23,14 @@ public class _16Floyd_Warshall_Algo {
         int nv = mat.length;
 
         for (int i = 0; i < nv; i++)
-            for (int j = 0; j < nv; j++)
-                if (mat[i][j] == -1) mat[i][j] = INF; // In the given prob, -1 == no path hence change it to infinity
+            for (int j = 0; j < nv; j++) {
+                if (mat[i][j] == -1) {
+                    mat[i][j] = INF;// In the given prob, -1 == no path hence change it to infinity
+                }
+                if (i == j) {
+                    mat[i][j] = 0;// from same node or same node, we can reach in no time hence 0
+                }
+            }
 
         for (int k = 0; k < nv; k++) {
             for (int i = 0; i < nv; i++) {
