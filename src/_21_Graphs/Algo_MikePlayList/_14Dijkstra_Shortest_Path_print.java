@@ -2,7 +2,7 @@ package _21_Graphs.Algo_MikePlayList;
 
 import java.util.*;
 
-public class _14Dijkstra_Shortest_Path {
+public class _14Dijkstra_Shortest_Path_print {
 
     public List<Integer> shortestPath(int n, int m, int edges[][]) {
         //  Code Here.
@@ -14,14 +14,14 @@ public class _14Dijkstra_Shortest_Path {
         }
 
         // we need to find the shortest path weight from 1 -> n
-        int[] weight = new int[n + 1];
-        Arrays.fill(weight, Integer.MAX_VALUE);
+        int[] pathWeight = new int[n + 1];
+        Arrays.fill(pathWeight, Integer.MAX_VALUE);
         int[] parent = new int[n + 1];
 
         PriorityQueue<Pair> q = new PriorityQueue<>((a, b) -> a.weight - b.weight);
         int source = 1, target = n;
         q.offer(new Pair(source, 0));
-        weight[source] = 0;
+        pathWeight[source] = 0;
         parent[source] = source;
 
         while (!q.isEmpty()) {
@@ -32,15 +32,15 @@ public class _14Dijkstra_Shortest_Path {
             for (Pair pair : adj.getOrDefault(u, Collections.emptyList())) {
                 int v = pair.node;
                 int delta = pair.weight;
-                if (w + delta < weight[v]) { // got a better option
-                    weight[v] = w + delta;
+                if (w + delta < pathWeight[v]) { // got a better option
+                    pathWeight[v] = w + delta;
                     parent[v] = u;
                     q.offer(new Pair(v, w + delta));
                 }
             }
         }
 
-        if (weight[target] == Integer.MAX_VALUE) { // no path was there bw source and target
+        if (pathWeight[target] == Integer.MAX_VALUE) { // no path was there bw source and target
             return List.of(-1);
         }
         // we got the shortest path now lets get path node by node
@@ -52,9 +52,9 @@ public class _14Dijkstra_Shortest_Path {
         }
         // when condition broke, we left without putting the last/source node
         stack.push(source);
+
         // now let's prepare our answer as per problem requirements
         ArrayList<Integer> ans = new ArrayList<>();
-        ans.add(weight[target]);
         while (!stack.isEmpty()) {
             ans.add(stack.pop());
         }

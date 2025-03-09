@@ -1,3 +1,7 @@
 1. When every we are being asked that we need to move from one state string of another state string in minimal time
    THEN BFS IS THE SOLUTION.
-2.
+2. If we know "the connection bw 2 nodes" OR "their is an edge bw this and this node", we can form DSU/UnionFind.
+   And with DSU we can also calculate number of islands connected
+3. DSU 's union function can be way compact like : parent[find(edge[1])] = find(edge[0]).
+   source : _21_Graphs.Questions_MikePlayList._5ValidPath_1971_DSU_COMPACT
+4. Check if we really need to make Adjacency lists (HashMap<Integer, List<Integer>> adj) or we can work with given graph structure.

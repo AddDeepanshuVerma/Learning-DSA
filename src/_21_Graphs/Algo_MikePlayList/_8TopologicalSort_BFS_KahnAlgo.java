@@ -11,7 +11,7 @@ public class _8TopologicalSort_BFS_KahnAlgo {
      * 2. As we know that Topological sort is nothing but sort all the vertex of Graph and a way
      *    that the sorted order supports u -> v path for every edge in the graph
      * 3. Kahn's Algo (Topological sort using BFS)
-     *    Approach : Here as we know in this sorted order, the first first has to be one which has no prior dependency
+     *    Approach : Here as we know in this sorted order, the first has to be one which has no prior dependency
      *               hence inDegree term comes into picture.
      *               we will calculate inDegrees for all vertices and do a BFS for only those which has inDegree == 0
      *               and only put those vertex again whose updated inDegree is now zero

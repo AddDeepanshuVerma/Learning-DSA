@@ -33,7 +33,7 @@ public class _13Dijkstra_Algo_PQ {
         int n = adj.size();
         ArrayList<Integer> weight = new ArrayList<>(Collections.nCopies(n, Integer.MAX_VALUE));
 
-        PriorityQueue<Pair> q = new PriorityQueue<>((a, b) -> a.weight - b.weight); //{source, second}
+        PriorityQueue<Pair> q = new PriorityQueue<>((a, b) -> a.weight - b.weight); //{source, weight}
         q.offer(new Pair(src, 0)); // to go source from source takes 0 second, default case to be added
         weight.set(src, 0);
 
