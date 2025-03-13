@@ -29,5 +29,6 @@ class MinZeroArray_3356 {
             if (countNonZero == 0) return i + 1;
         }
         return -1;
+
     }
 }
