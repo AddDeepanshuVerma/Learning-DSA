@@ -4,4 +4,15 @@
    And with DSU we can also calculate number of islands connected
 3. DSU 's union function can be way compact like : parent[find(edge[1])] = find(edge[0]).
    source : _21_Graphs.Leetcode._2medium._5ValidPath_1971_DSU_COMPACT
-4. Check if we really need to make Adjacency lists (HashMap<Integer, List<Integer>> adj) or we can work with given graph structure.
+4. Check if we really need to make Adjacency lists (HashMap<Integer, List<Integer>> adj)
+   or we can work with given graph structure.
+5. When working with a Graph which is given as a type of Tree unDirected graph and we are applying BFS or DFS
+   Then instead of maintaining visited type boolean array, we can simple work in parent node: next node that we are going to
+   explore just does not have to be parent rest are fine.
+   for (Integer v : adj.getOrDefault(u, Collections.emptyList())){
+        if (v != parent){ /* then proceed */ }
+   }
+6. When it is given that graph is a tree It means we are forcefully being told that:
+    This graph is a single component
+    This graph would not have any cycle
+    This graph traversal does not need to have visited boolean array, we can simply check vai nextNode != parentNode
