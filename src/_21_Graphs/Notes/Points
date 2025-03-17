@@ -1,11 +1,11 @@
 1. When every we are being asked that we need to move from one state string of another state string in minimal time
    THEN BFS IS THE SOLUTION.
 2. If we know "the connection bw 2 nodes" OR "their is an edge bw this and this node", we can form DSU/UnionFind.
-   And with DSU we can also calculate number of islands connected
+   And with DSU we can also calculate number of islands connected.
 3. DSU 's union function can be way compact like : parent[find(edge[1])] = find(edge[0]).
    source : _21_Graphs.Leetcode._2medium._5ValidPath_1971_DSU_COMPACT
 4. Check if we really need to make Adjacency lists (HashMap<Integer, List<Integer>> adj)
-   or we can work with given graph structure.
+   or we can work with given graph structure.✨✨✨✨✨✨
 5. When working with a Graph which is given as a type of Tree unDirected graph and we are applying BFS or DFS
    Then instead of maintaining visited type boolean array, we can simple work in parent node: next node that we are going to
    explore just does not have to be parent rest are fine.
@@ -15,4 +15,11 @@
 6. When it is given that graph is a tree It means we are forcefully being told that:
     This graph is a single component
     This graph would not have any cycle
-    This graph traversal does not need to have visited boolean array, we can simply check vai nextNode != parentNode
+    This graph traversal does not need to have visited boolean array, we can simply check vai nextNode != parentNode ✨✨✨
+7. In Tree type graph only parent->child relationship is needed, hence instead of adding u->v & v->u, we can simply work with
+    parent->child as pr given relation in problem (like 2246 submitted solutions).✨✨✨
+8. In Dijkstra algorithm we do not use boolean type visited as the one with lower & lower weight serves this purpose where we would not
+    visit the same index again as edgeWeights are positive & we can not get lower weight going backward (note: in case of -ive weights
+    BellMan ford algo comes into picture until there is a -ive cycle in the graph.
+9. In a Directed graph if edges is given like :  edges = [2,2,3,-1]
+    Then we don't need to make adjacency lists using HashMap, we can do traversal using this edges 1D array Alone.✨✨✨

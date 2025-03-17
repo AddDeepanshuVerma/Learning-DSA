@@ -1,11 +1,15 @@
 package _21_Graphs.Leetcode._2medium;
 
+import jdk.jfr.Description;
+
 import java.util.*;
 
+// DOES NOT PASS ALL TEST CASES
 class ClosestMeetingNode_2359 {
 
     private HashMap<Integer, List<Integer>> adj;
 
+    @Description(" Wrong approach as we can not find the lowest node to achieve clash")
     public int closestMeetingNode(int[] edges, int n1, int n2) {
         int nv = edges.length;
         adj = new HashMap<>();

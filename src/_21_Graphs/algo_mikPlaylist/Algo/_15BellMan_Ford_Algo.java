@@ -31,17 +31,15 @@ public class _15BellMan_Ford_Algo {
     // TC : V*E
     static int[] bellmanFord(int V, int[][] edges, int src) {
         int[] dis = new int[V];
-        Arrays.fill(dis, Integer.MAX_VALUE);
+        Arrays.fill(dis, Integer.MAX_VALUE); // OR TO SURPASS INTMAX CHECK LATER, WE CAN PUT 1E8 HERE
 
         dis[src] = 0;
         for (int i = 0; i < V; i++) { // as per algorithm should be V-1 times
             for (int[] edge : edges) { // {u, v, w}
-                int u = edge[0];
-                int v = edge[1];
-                int w = edge[2];
+                int u = edge[0], v = edge[1], w = edge[2];
+                if (dis[u] == Integer.MAX_VALUE) continue; // if source is unreachable skip
 
-                /* means we have valid path till u */
-                if (dis[u] != Integer.MAX_VALUE && dis[u] + w < dis[v]) {
+                if (dis[u] + w < dis[v]) {
                     dis[v] = dis[u] + w;
                 }
             }
@@ -57,7 +55,6 @@ public class _15BellMan_Ford_Algo {
                 return new int[]{-1};// -ive cycle detected
             }
         }
-
         return dis;
     }
 }

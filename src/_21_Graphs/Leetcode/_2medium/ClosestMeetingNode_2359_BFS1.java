@@ -2,7 +2,8 @@ package _21_Graphs.Leetcode._2medium;
 
 import java.util.*;
 
-class ClosestMeetingNode_2359_2 {
+// Passes all testCase with Higher TC: (V+E) + (V+E)... their lies an optimal approach
+class ClosestMeetingNode_2359_BFS1 {
 
     private HashMap<Integer, List<Integer>> adj;
 
@@ -20,8 +21,6 @@ class ClosestMeetingNode_2359_2 {
         // hence whenever starting from 0 till end seconds the first value where n1 == n2 is our first clash
         int[] reach1 = bfs(n1, nv);
         int[] reach2 = bfs(n2, nv);
-        System.out.println(Arrays.toString(reach1));
-        System.out.println(Arrays.toString(reach2));
 
         int min = Integer.MAX_VALUE;
         int resNode = -1;
