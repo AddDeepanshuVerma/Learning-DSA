@@ -10,7 +10,6 @@ class MaximumTastiness_2517 {
     }
     public static int maximumTastiness(int[] price, int k) {
         Arrays.sort(price);
-        int sum = Arrays.stream(price).sum();
         int n = price.length;
         int start = 1;
         int end = price[n - 1] - price[0];
