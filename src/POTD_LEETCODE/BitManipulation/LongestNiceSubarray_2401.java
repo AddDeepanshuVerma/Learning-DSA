@@ -1,4 +1,4 @@
-package POTD_LEETCODE;
+package POTD_LEETCODE.BitManipulation;
 
 class LongestNiceSubarray_2401 {
     public static int longestNiceSubarray(int[] nums) {
