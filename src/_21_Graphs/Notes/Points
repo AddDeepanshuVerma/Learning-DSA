@@ -23,3 +23,7 @@
     BellMan ford algo comes into picture until there is a -ive cycle in the graph.
 9. In a Directed graph if edges is given like :  edges = [2,2,3,-1]
     Then we don't need to make adjacency lists using HashMap, we can do traversal using this edges 1D array Alone.✨✨✨
+10. In DSU when we have explored all edges and created one parent array, Now before processing that data further, we must call
+    find(i) for each index in parent array to make sure all values are updated.
+11, check out ony DSU solution for problem : "2360. Longest Cycle in a Graph" Here with the help of some given condition we are applying
+    DSU on directed graph to detect longest cycle length in graph.🖤🖤🖤

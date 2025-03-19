@@ -11,7 +11,7 @@ class MinScore_2492_4DSU {
             int u = road[0], v = road[1];
             int uParent = find(u);
             int vParent = find(v);
-
+            // union all given edges
             parent[vParent] = uParent;
         }
 
