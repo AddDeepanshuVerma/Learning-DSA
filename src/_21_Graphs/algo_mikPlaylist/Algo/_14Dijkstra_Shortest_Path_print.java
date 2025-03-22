@@ -27,15 +27,15 @@ public class _14Dijkstra_Shortest_Path_print {
         while (!q.isEmpty()) {
             Pair poll = q.poll();
             int u = poll.node;
-            int w = poll.weight;
+            int uw = poll.weight;
 
             for (Pair pair : adj.getOrDefault(u, Collections.emptyList())) {
                 int v = pair.node;
-                int delta = pair.weight;
-                if (w + delta < pathWeight[v]) { // got a better option
-                    pathWeight[v] = w + delta;
+                int vw = pair.weight;
+                if (uw + vw < pathWeight[v]) { // got a better option
+                    pathWeight[v] = uw + vw;
                     parent[v] = u;
-                    q.offer(new Pair(v, w + delta));
+                    q.offer(new Pair(v, pathWeight[v]));
                 }
             }
         }
