@@ -33,4 +33,50 @@
     Topological sorted order of all of those node(here we start bfs with those nodes that has no dependency or has indegree == 0).
     And every other node that we go through, for this topological order to be created, is a reachable node. Rest those were not reachable must be
     in some kind of cycle and topological order does not contain cycle, hence only valid node will be there.🔥🔥🔥
-13.
+13. After implementing DSU, when we have our parent[] & size[] array ready, there are multiple ways to know about:
+    how many parents we have & how many components they have
+    A. Brute force ways: Using HashSet to store unique data in parents array & later that HashSet can be used to get size[value]
+
+        HashSet<Integer> components = new HashSet<>();
+        for (int i = 0; i < parent.length; i++) {
+            int leader = find(i);
+            components.add(leader);
+        }
+        for (Integer component : components) {
+            int currComponentSize = size[component];
+        }
+    B. Optimal way: Instead of using HashSet we can use simple array & increment common parents index value
+
+        int[] components = new int[n];
+        for (int i = 0; i < parent.length; i++) {
+            components[find(i)]++;
+        }
+        int numOfComponents = 0;
+        for (int i = 0; i < components.length; i++) {
+            if (components[i] == 0) continue;
+            int currComponentSize = size[i];
+            numOfComponents++;
+        }
+    C. Most optimal way : simply traverse all nodes/parentsArray & when index == parent[index] means this is our leader of one of the component
+       and those under his leader ship would not have same condition true, hence calculate the size as well
+
+       int numOfComponents = 0;
+       for (int i = 0; i < n; i++) {
+           if (parent[i] == i) {
+               int currComponentSize = size[i]
+               numOfComponents++;
+           }
+       }
+       return count;
+
+14. While applying Dijkstra algorithm or doing any BFS before exploring the neighbour node of current node, below can check significant
+    amount of time:
+    if (currWeight_of_u > minWeight_so_far[u]) continue;
+    // do not explore neighbours nodes of v further in the HashMap
+    for (int[] ngrb : adj.getOrDefault(u, Collections.emptyList())) {
+        -----
+        -----
+    }
+
+15.
+
