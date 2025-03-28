@@ -8,6 +8,7 @@ public class Braces {
         String str = new Scanner(System.in).nextLine();
         str = str.replace('[', '{');
         str = str.replace(']', '}');
+        str = str.replace('\"', '\'');
 
         StringSelection selection = new StringSelection(str);
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
