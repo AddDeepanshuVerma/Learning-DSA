@@ -1,4 +1,4 @@
-package POTD_LEETCODE;
+package POTD_LEETCODE.Dynamic_Programming;
 
 import java.util.Arrays;
 
