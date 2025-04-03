@@ -17,7 +17,7 @@ class SumOfDistancesInTree_834_FloydWarshall_cmpt {
             grid[v][u] = 1;
         }
 
-        // now we need to relax each grid value through all nodes
+        // now we need to relax each grid getValue through all nodes
         for (int k = 0; k < n; k++) {
             for (int i = 0; i < n; i++) {
                 for (int j = 0; j < n; j++) {

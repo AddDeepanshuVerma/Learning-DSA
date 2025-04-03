@@ -29,7 +29,7 @@ class MinimumCost_3108_DSU {
                 ans[i] = -1;
                 continue;
             }
-            // now they do belong to same component hence that components overall & of all the edge's weight would be the answer
+            // now they do belong to same component hence that components overall & of all the edge's getValue would be the answer
             ans[i] = and[uParent];
         }
 
@@ -49,7 +49,7 @@ class MinimumCost_3108_DSU {
         int bParent = find(b);
         parent[bParent] = aParent;
         and[aParent] = and[aParent] & and[bParent]; // first we will collide both the components
-        and[aParent] = and[aParent] & w;            // then will use curr edge weight to find the minimum one
+        and[aParent] = and[aParent] & w;            // then will use curr edge getValue to find the minimum one
     }
 
     public static void main(String[] args) {

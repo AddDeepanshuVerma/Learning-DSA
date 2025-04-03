@@ -39,7 +39,7 @@ class DistanceLimitedPathsExist_1697 {
         while (!pq.isEmpty()) {
             int[] poll = pq.poll();
             int u = poll[0], uw = poll[1];
-            if (uw > weight[u]) continue; // no need to explore with higher weight
+            if (uw > weight[u]) continue; // no need to explore with higher getValue
 
             for (int[] ngbr : adj.getOrDefault(u, Collections.emptyList())) {
                 int v = ngbr[0], vw = ngbr[1];

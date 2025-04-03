@@ -17,7 +17,7 @@ class MinimumCost_3108_FloydW {
                 else grid[i][j] = INF;
             }
         }
-        // put all the edges value given by their weight
+        // put all the edges getValue given by their getValue
         for (int[] edge : edges) {
             int u = edge[0], v = edge[1], w = edge[2];
             grid[u][v] = w;
@@ -36,7 +36,7 @@ class MinimumCost_3108_FloydW {
                 }
             }
         }
-        // which are still unReachable means has value=== INF, we can mark them as -1
+        // which are still unReachable means has getValue=== INF, we can mark them as -1
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] == INF) {

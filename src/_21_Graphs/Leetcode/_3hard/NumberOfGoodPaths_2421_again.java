@@ -9,7 +9,7 @@ class NumberOfGoodPaths_2421_again {
     int res; // variable to store the number of good paths
 
     public int numberOfGoodPaths(int[] vals, int[][] edges) {
-        // sort edges based on the maximum value of the nodes in the edge
+        // sort edges based on the maximum getValue of the nodes in the edge
         Arrays.sort(edges, (a, b) -> Math.max(vals[a[0]], vals[a[1]]) - Math.max(vals[b[0]], vals[b[1]]));
         int n = vals.length;
         res = n; // initialize number of good paths to be equal to number of nodes

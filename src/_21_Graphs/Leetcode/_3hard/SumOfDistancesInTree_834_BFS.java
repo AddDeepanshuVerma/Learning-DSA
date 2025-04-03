@@ -11,7 +11,7 @@ class SumOfDistancesInTree_834_BFS {
         /*
          * Steps: Here we could have applied dijkstra algorithm to find the shortest path in case of weighted graph
          * but as per prob statement: we can assume all weights to be 1 hence we can apply simple BFS approach
-         * Hence Apply simple BFS approach for all sources one by one and store their sum's value in required
+         * Hence Apply simple BFS approach for all sources one by one and store their sum's getValue in required
          * array to return
          * PROBLEM : TIME Complexity of this approach : bfs on each node = bfs * nV = O(V+E) * V === V^3
          * */

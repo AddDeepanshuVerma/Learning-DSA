@@ -50,7 +50,7 @@ class MinimumCost_3108_Dijkstra {
             }
         }
 //        System.out.print("for query : " + start + " " + dst);
-//        System.out.println(", weight array :" + Arrays.toString(weight));
+//        System.out.println(", getValue array :" + Arrays.toString(getValue));
         return weight[dst] == MASK ? -1 : weight[dst];
     }
 
