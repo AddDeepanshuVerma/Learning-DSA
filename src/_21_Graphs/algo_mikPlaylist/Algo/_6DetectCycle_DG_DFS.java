@@ -1,5 +1,7 @@
 package _21_Graphs.algo_mikPlaylist.Algo;
 
+import jdk.jfr.Description;
+
 import java.util.ArrayList;
 
 public class _6DetectCycle_DG_DFS {
@@ -16,24 +18,27 @@ public class _6DetectCycle_DG_DFS {
      * */
     public boolean isCyclic(ArrayList<ArrayList<Integer>> adj) {
         int vertices = adj.size();
-        boolean[] visited = new boolean[vertices];
+        boolean[] global = new boolean[vertices];
         boolean[] inRecursion = new boolean[vertices];
 
         for (int i = 0; i < vertices; i++) {
-            if (!visited[i] && cycleDetected(i, inRecursion, visited, adj)) {
+            if (!global[i] && cycleDetected(i, inRecursion, global, adj)) {
                 return true;
             }
         }
         return false;
     }
 
-    private boolean cycleDetected(int curr, boolean[] inRecursion, boolean[] visited, ArrayList<ArrayList<Integer>> adj) {
+    // Here in a DFS of a vertex if a cycle detected then for that complete cycle we keep inRecursion flag as true
+    // and this inRecursion keeps that true till end of all the calculations as we return in mid and "inRecursion[curr] = false;"
+    // does not get executed Hence later on this inRecursion will tell us how many nodes were indulged in a cycle
+    private boolean cycleDetected(int curr, boolean[] inRecursion, boolean[] global, ArrayList<ArrayList<Integer>> adj) {
         inRecursion[curr] = true;
-        visited[curr] = true;
+        global[curr] = true;
         for (Integer next : adj.get(curr)) {
             if (inRecursion[next]) return true;
-            if (visited[next]) continue;
-            if (cycleDetected(next, inRecursion, visited, adj)) return true;
+            if (global[next]) continue;
+            if (cycleDetected(next, inRecursion, global, adj)) return true;
         }
         inRecursion[curr] = false;
         return false;
