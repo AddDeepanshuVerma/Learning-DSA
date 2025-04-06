@@ -78,5 +78,57 @@
         -----
     }
 
-15.
+15. A problem related to DSU can be set in such a way that:
+    that we will have a chance to build graph using 1 by 1 edge using DSU and while building this graph in a increasing order of
+    edge weight, we can say that at some point the max edge weight used is lower to what we are going to use next.
+    Hence in this case we have two pointer:
+        one pointer adds the edge by DSU 1 by 1 &
+        second pointer answers all the queries (already in sorted order) whose weight is less that used in graph
+    USE-CASE : 1697. Checking Existence of Edge Length Limited Paths
+
+16. A DSU problem shows us that :
+    a problem can be set where instead of creating single DSU graph, multiple DSU graph can be calculated
+    where we used the instance of DSU class to be created multiple times like : Alice = new DSU(), BOB = new DSU();
+    And in such way a question can be formed like :
+    USE-CASE : 1579. Remove Max Number of Edges to Keep Graph Fully Traversable
+
+17. Sometime we really need a hint to be sure that this question can be solved after considering it as a Graph Question LIKE : 399
+
+18. In Dijkstra algorithm we relay on our weight array instead of visited array as we are always looking for minimum answer
+    but if there is a case when we don't need weight array as we are sure simple BFS + priorityQueue will reach to destination
+    then we can remove this weight array concept and callBack that visited array one.
+
+19.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
