@@ -5,7 +5,6 @@ import java.util.Queue;
 
 // most optimal so far : Used bitMasking to track visited path for each individual node & hence a common HashSet for all nodes
 class ShortestPathLength_847_optimalFinal {
-
     /**
      * -------------------------------
      * \U0001f9e0 INTUITION:
@@ -39,7 +38,6 @@ class ShortestPathLength_847_optimalFinal {
      * -------------------------------
      * - For the queue and seen array.
      */
-
     public int shortestPathLength(int[][] graph) {
         int n = graph.length;
 
