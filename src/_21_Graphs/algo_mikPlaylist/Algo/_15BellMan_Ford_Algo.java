@@ -28,19 +28,21 @@ public class _15BellMan_Ford_Algo {
      *        DETECT THE -IVE CYCLE RUN 1 MORE TIME AND IF ANY VERTEX GETS RELAXED IT MEANS -IVE CYCLE DETECTED.
      * */
 
+    // 2642. Design Graph With Shortest Path Calculator (TO REVISE ABOUT ALL 3 ALGO)
     // TC : V*E
+    // Brief : we relax edges in a specific order V-1 times while distance[src] = 0, keep a 1D array distance[], distance[src] = 0
     static int[] bellmanFord(int V, int[][] edges, int src) {
-        int[] dis = new int[V];
-        Arrays.fill(dis, Integer.MAX_VALUE); // OR TO SURPASS INTMAX CHECK LATER, WE CAN PUT 1E8 HERE
+        int[] distance = new int[V];
+        Arrays.fill(distance, Integer.MAX_VALUE); // OR TO SURPASS INTMAX CHECK LATER, WE CAN PUT 1E8 HERE
 
-        dis[src] = 0;
+        distance[src] = 0;
         for (int i = 0; i < V; i++) { // as per algorithm should be V-1 times
             for (int[] edge : edges) { // {u, v, w}
                 int u = edge[0], v = edge[1], w = edge[2];
-                if (dis[u] == Integer.MAX_VALUE) continue; // if source is unreachable skip
+                if (distance[u] == Integer.MAX_VALUE) continue; // if source is unreachable skip
 
-                if (dis[u] + w < dis[v]) {
-                    dis[v] = dis[u] + w;
+                if (distance[u] + w < distance[v]) {
+                    distance[v] = distance[u] + w;
                 }
             }
         }
@@ -51,10 +53,10 @@ public class _15BellMan_Ford_Algo {
             int v = edge[1];
             int w = edge[2];
 
-            if (dis[u] != Integer.MAX_VALUE && dis[u] + w < dis[v]) {
+            if (distance[u] != Integer.MAX_VALUE && distance[u] + w < distance[v]) {
                 return new int[]{-1};// -ive cycle detected
             }
         }
-        return dis;
+        return distance;
     }
 }

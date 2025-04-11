@@ -2,7 +2,7 @@ package _21_Graphs.algo_mikPlaylist.Questions;
 
 import java.util.*;
 
-class _8plementDijkstra {
+class _8ImplementDijkstra {
     // Function to find the shortest path from a source node to all other nodes
     public int[] shortestPath(ArrayList<ArrayList<Integer>> adj, int src) {
         int n = adj.size();

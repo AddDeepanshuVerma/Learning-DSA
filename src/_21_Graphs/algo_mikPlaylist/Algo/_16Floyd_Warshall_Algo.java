@@ -7,7 +7,7 @@ public class _16Floyd_Warshall_Algo {
      *
      * Steps :
      * 1. Create 2D matrix of Vertex x vertex
-     * 2. Put all the given values of {u,v} edge and rest infinity in that 2D matrix
+     * 2. Put all the given values of {u,v} edge , diagonal value == 0 and rest infinity in that 2D matrix
      * 3. Now for each value in 2D matrix: check them via for(int k = 0; k < n; k++)
      *    And store the minimum value.
      * 4. Result will be there in this 2D matrix itself.
@@ -18,6 +18,7 @@ public class _16Floyd_Warshall_Algo {
      * 3. Then there was negative cycle.
      * */
     //TC : n^3
+    // Brief : we maintain a 2D array, mark all unreachable INTMAX & diagonal 0, now relax each node to each other node going through each node
     public int[][] floydWarshallAlgo(int[][] mat) {
         final int INF = 10000; // grater then max value in the matrix
         int nv = mat.length;
