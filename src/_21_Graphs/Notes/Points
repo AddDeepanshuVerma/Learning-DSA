@@ -98,7 +98,28 @@
     but if there is a case when we don't need weight array as we are sure simple BFS + priorityQueue will reach to destination
     then we can remove this weight array concept and callBack that visited array one.
 
-19.
+19. if given constraints is : n<=10
+    Then we can apply O(2^n ∗ n^3) === (subset of n length) x (floyd warshall algo on those subsets).s
+
+20. In Floyd Warshall algorithm when we are putting given edges weights of problem, There might be multiple a->b path with diff weights
+    hence always put using mat[i][j] = Math.min(mat[i][j], currWeight).
+
+21. Floyd Warshall can be optimized using below methods:
+    for (int i = 0; i < matrix.length; i++) {
+        Arrays.fill(matrix[i], Integer.MAX_VALUE);
+        matrix[i][i] = 0;
+    }
+
+    for (int k = 0; k < 26; k++) {
+            for (int i = 0; i < 26; i++) {
+                if (matrix[i][k] == Integer.MAX_VALUE) continue;            // saves our time by writing early
+                for (int j = 0; j < 26; j++) {
+                    if (matrix[k][j] == Integer.MAX_VALUE) continue;
+                    -------------------
+                    -------------------
+                }
+            }
+    }
 
 
 

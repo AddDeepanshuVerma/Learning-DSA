@@ -19,6 +19,8 @@ public class _16Floyd_Warshall_Algo {
      * */
     //TC : n^3
     // Brief : we maintain a 2D array, mark all unreachable INTMAX & diagonal 0, now relax each node to each other node going through each node
+    // In this algorithm if we are putting given edges of problem, There might be multiple a->b path with diff weights hence always put
+    // using Math.min(already, current) to put
     public int[][] floydWarshallAlgo(int[][] mat) {
         final int INF = 10000; // grater then max value in the matrix
         int nv = mat.length;
