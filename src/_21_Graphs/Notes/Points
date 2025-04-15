@@ -121,6 +121,15 @@
             }
     }
 
+22. When we are bound to handle out of int range cases in priority queue
+    PriorityQueue<long[]> pq = new PriorityQueue<>((a, b) -> (int)a[1] - (int)b[1]);
+    PriorityQueue<long[]>  q = new PriorityQueue<>((a, b) -> a[1] < b[1] ?  -1 : 1);
+    PriorityQueue<long[]>  q = new PriorityQueue<>((a, b) -> Long.compare(a[1], b[1]));
+    PriorityQueue<Pair>   pq = new PriorityQueue<>(Comparator.comparingLong(a -> a.weight));
+
+    in such problem we can use long INF as : Long.MAX_VALUE / 2;
+
+
 
 
 
