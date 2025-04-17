@@ -129,7 +129,28 @@
 
     in such problem we can use long INF as : Long.MAX_VALUE / 2;
 
+23. To forward & backward the digit character 1 by 1
+    char forw = (char) (((int) (ch - '0') + 1) % 10 + '0');
 
+    char bacw = (char) (((int) (ch - '0') - 1 + 10) % 10 + '0');
+    char bacw = (char) (((int) (ch - '0') + 9) % 10 + '0');
+
+    Another way :
+        char ch = arr[i];
+            for (int move : new int[]{1, -1}) {
+                arr[i] = (char) (((int) (ch - '0') + move + 10) % 10 + '0'); // forward & backward single digit in wheel
+                String v = String.valueOf(arr);
+                if (visited.contains(v)) continue;
+                visited.add(v);
+                q.offer(v);
+            }
+        arr[i] = ch;
+
+24. If given that graph is Acyclic, think about "topological sort" OR "onion peeling" doesn't matter if given Graph is directed/undirected.
+
+25. Whenever we are using the combination of PriorityQueue & visited Hashset
+    then make sure that we mark the key visited only when it pops out of queue at the starting of while loop.
+    Reason : as if we mark that key in ngbr for loop, there might be a better case with low cost occur later which will be neglected by prior one.
 
 
 
