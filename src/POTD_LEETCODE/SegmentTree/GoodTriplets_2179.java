@@ -1,5 +1,6 @@
-package POTD_LEETCODE;
+package POTD_LEETCODE.SegmentTree;
 
+// TLE : n^3
 class GoodTriplets_2179 {
     public long goodTriplets(int[] nums1, int[] nums2) {
         int[] map = new int[nums2.length];
