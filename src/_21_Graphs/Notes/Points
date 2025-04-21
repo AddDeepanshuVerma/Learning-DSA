@@ -152,8 +152,20 @@
     then make sure that we mark the key visited only when it pops out of queue at the starting of while loop.
     Reason : as if we mark that key in ngbr for loop, there might be a better case with low cost occur later which will be neglected by prior one.
 
+26. As a rule of thumb TLE happens around 10 8 , so when n=100 and edges = n 2 =10 4 , any algorithm under O(E^2 ) or O(n^4) can pass!
+    Like FloydWarshall TC : nv^3
 
+27. The discussion of Dijkstra's time complexity makes the assumption that the number of edges ∣E∣ is proportional to ∣V∣ 2 .
+    While such a graph is theoretically possible because each vertex can have ∣V∣−1 edges, real world graphs tend to be sparse.
+    It is more common in discussions of Dijkstra's algorithm to assume that ∣E∣ is proportional to ∣V∣ (not ∣V∣ 2 ). Assuming more
+    realistic inputs, the time complexity for a single run of the algorithm is O(n⋅log(n)), where n=∣V∣. We run this for each node,
+    so the total time complexity will tend to be more like O(n 2 ⋅log(n)). The runtime distribution for this problem bears this out,
+    as Floyd-Warshall implementations tend to do worse than Dijkstra's implementations.
 
+    Obviously this all depends on your input! If you know for some reason that the input graphs are likely to be very dense,
+    then Floyd-Warshall will do better for you.
+
+28.
 
 
 
