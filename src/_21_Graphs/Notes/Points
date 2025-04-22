@@ -146,13 +146,13 @@
             }
         arr[i] = ch;
 
-24. If given that graph is Acyclic, think about "topological sort" OR "onion peeling" doesn't matter if given Graph is directed/undirected.
+24. If given that graph is Acyclic, think about "topological sort" OR "onion peeling", doesn't matter if given Graph is directed/undirected.
 
 25. Whenever we are using the combination of PriorityQueue & visited Hashset
     then make sure that we mark the key visited only when it pops out of queue at the starting of while loop.
     Reason : as if we mark that key in ngbr for loop, there might be a better case with low cost occur later which will be neglected by prior one.
 
-26. As a rule of thumb TLE happens around 10 8 , so when n=100 and edges = n 2 =10 4 , any algorithm under O(E^2 ) or O(n^4) can pass!
+26. As a rule of thumb TLE happens around 10^8, so when n = 100 and edges = n^2 === 10^4, any algorithm under O(E^2) or O(n^4) can pass!
     Like FloydWarshall TC : nv^3
 
 27. The discussion of Dijkstra's time complexity makes the assumption that the number of edges ∣E∣ is proportional to ∣V∣ 2 .
