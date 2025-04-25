@@ -165,7 +165,18 @@
     Obviously this all depends on your input! If you know for some reason that the input graphs are likely to be very dense,
     then Floyd-Warshall will do better for you.
 
-28.
+28. Reverse thinking is very hard and counters intuitive : GRAPH : 3419 :
+    if someone asks us to check if all nodes can be reachable to a single target node. instead of starting from all the nodes
+    and try to figure out if we can reach to target node, it makes sense to start from target and try to reach to all the other nodes.
+    Now we are left with directions which we can control anyways. because we are always given the edges, its we who decide the direction
+    as per our problem requirements. Just always think if you need to reach to single node from multiple nodes, think of reversing the direction.
+
+29. Whenever we are given directed Graph we need to think in below order:
+    a. Check if we can applying topological sort resolve our.
+    b. Check if we need to travel all node with repeated edges then we might apply, add my children first then add me addLast.
+    c. if it is asking for shortest path with +ve weights, it's dijkstra.
+    d. If nothing is working so far, Check if reversing the graph can help or not.
+    e. As in only Directed graph we can do reversing, it would be the last option if nothing works!!!!!
 
 
 
