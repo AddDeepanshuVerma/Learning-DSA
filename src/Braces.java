@@ -13,5 +13,6 @@ public class Braces {
         StringSelection selection = new StringSelection(str);
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(selection, selection);
+        System.out.println("updated content is copied to clipboard");
     }
 }
