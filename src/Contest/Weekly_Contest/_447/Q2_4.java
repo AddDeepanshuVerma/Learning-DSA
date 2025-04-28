@@ -50,7 +50,6 @@ public class Q2_4 {
 
     int find(int i) {
         if (i == parent[i]) return i;
-
         return parent[i] = find(parent[i]);
     }
 
