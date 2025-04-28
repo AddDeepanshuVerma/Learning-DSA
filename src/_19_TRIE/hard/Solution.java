@@ -58,7 +58,7 @@ class Trie {
         }
         return maxNum;
     }
-};
+}
 
 public class Solution {
     public static ArrayList<Integer> maxXorQueries(ArrayList<Integer> arr, ArrayList<ArrayList<Integer>> queries) {

@@ -29,7 +29,8 @@ class MostProfitablePath_2467_compact {
         // find the path from alice(0) till bob and store in a stack
         DFS_Bob(alice, bob);
 
-        // do a BFS where we will keepOn burning nodes from 0, level wise & whenever we go to next level our bob also moves to stack top element
+        // do a BFS where we will keep On burning nodes from 0,
+        // level wise & whenever we go to next level our bob also moves to stack top element
         BFS_Alice(bob, amount);
         return max;
     }

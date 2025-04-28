@@ -5,6 +5,9 @@ package _17_SlidingWindow.Algo;
 // 2. while we'll also maintain an index if (j -i + 1) is ever touch our window size of k,then
 //      first we will store our ans and before next element sum addition. here itself we will remove
 //      ith index and increment i, that's how i and j maintains a window of size K.
+
+/*NOTE : If there is negative numbers in the array then sliding window can't be applied
+because you don't have a valid window condition here.*/
 public class WindowSizeFixed {
     public static void main(String[] args) {
         int[] arr = {2, 3, 1, -5, 6, 9, 2};

@@ -4,25 +4,23 @@ import jdk.jfr.Description;
 
 import java.util.Arrays;
 
-@Description("All test cases passed")
+@Description("All test cases passed: Quick sort worst case time complexity is n^2")
 public class QuickSort_asc {
     public static void main(String[] args) {
-//        int[] arr = {5, 5, 5, 5, 5, 5, 5, 5, 6, 7, 8, 5, 1, 1, 2, 0, 0};
-        int[] arr = {81, 76, 40};
+        int[] arr = {5, 5, 5, 5, 5, 5, 5, 5, 6, 7, 8, 5, 1, 1, 2, 0, 0, 5};
         quickSort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
-
     }
 
-    public static void quickSort(int[] arr, int left, int right) {
+    static void quickSort(int[] arr, int left, int right) {
         if (left < right) {
-            int PivotIndex = partition(arr, left, right);
-            quickSort(arr, left, PivotIndex - 1);
-            quickSort(arr, PivotIndex + 1, right);
+            int pivotIndex = partition(arr, left, right);
+            quickSort(arr, left, pivotIndex - 1);
+            quickSort(arr, pivotIndex + 1, right);
         }
     }
 
-    public static int partition(int[] arr, int firstIndex, int high) {
+    static int partition(int[] arr, int firstIndex, int high) {
         int pivot = arr[firstIndex];
         int i = firstIndex;// both fine int i = firstIndex + 1 ;
         int j = high;

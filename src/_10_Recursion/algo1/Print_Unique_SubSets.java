@@ -9,7 +9,7 @@ public class Print_Unique_SubSets {
     static List<String> list = new ArrayList<>();
 
     public static void main(String[] args) {
-        String str = "abc";
+        String str = "aa";
         printSubsets3(new StringBuilder(""), str, 0);
         System.out.println(list);
 
