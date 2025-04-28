@@ -1,0 +1,3 @@
+1. In BFS when we are offering the elements in ascending order only, then is no need of priority queue,
+    Hence we can simply use a queue(Dequeue) in which we pop from first and add to last only or vice versa.
+2.
