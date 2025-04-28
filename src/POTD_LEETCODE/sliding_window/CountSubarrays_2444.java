@@ -1,4 +1,4 @@
-package POTD_LEETCODE;
+package POTD_LEETCODE.sliding_window;
 
 class CountSubarrays_2444 {
     public long countSubarrays(int[] nums, int minK, int maxK) {
