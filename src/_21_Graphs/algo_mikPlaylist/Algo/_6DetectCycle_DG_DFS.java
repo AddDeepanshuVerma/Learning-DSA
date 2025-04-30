@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class _6DetectCycle_DG_DFS {
     /*
-     * Key Points : In Directed graph we can not relay on a single visited array coz:
+     * Key Points.js : In Directed graph we can not relay on a single visited array coz:
      * 1. suppose we ran a dfs on a first and no cycle was detected but all those nodes were marked as visited so
      *    that we do not run dfs again on any of those first again to save time and iot worked in UDG because
      *    even if we visited the first which was previously visited in a previous DFS, being it UDG we can go back.

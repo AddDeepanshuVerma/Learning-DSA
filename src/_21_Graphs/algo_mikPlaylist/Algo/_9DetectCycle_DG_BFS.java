@@ -17,7 +17,7 @@ public class _9DetectCycle_DG_BFS {
     }
 
     /*
-     * Key Points :
+     * Key Points.js :
      * 1. As we know that it is Directed Graph and to apply Kahn's Algorithm this graph need to be Acyclic(no cycle)
      * 2. Hence We will try to get Topological sort using BFS (apply Kahn's Algorithm)
      * 3. If we would successfully be able to get topological Sort out of this Graph OR

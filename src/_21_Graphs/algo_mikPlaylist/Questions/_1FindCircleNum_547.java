@@ -10,7 +10,7 @@ class _1FindCircleNum_547 {
     }
 
     public static int findCircleNum(int[][] isConnected) {
-        /* Points :
+        /* Points.js :
          * It is an unDirected graph & Yes there can be cycles in Graph.
          * We need to calculate how many components are there :
          * Approach : make the adjLists, maintain a visited array

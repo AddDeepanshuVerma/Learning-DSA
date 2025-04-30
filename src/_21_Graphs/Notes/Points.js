@@ -1,38 +1,51 @@
 1. When every we are being asked that we need to move from one state string of another state string in minimal time
    THEN BFS IS THE SOLUTION.
+
 2. If we know "the connection bw 2 nodes" OR "their is an edge bw this and this node", we can form DSU/UnionFind.
    And with DSU we can also calculate number of islands connected.
+
 3. DSU 's union function can be way compact like : parent[find(edge[1])] = find(edge[0]).
+   "return i == parent[i] ? i : (parent[i] = find(parent[i]));"
    source : _21_Graphs.Leetcode._2medium._5ValidPath_1971_DSU_COMPACT
+
 4. Check if we really need to make Adjacency lists (HashMap<Integer, List<Integer>> adj)
    or we can work with given graph structure.✨✨✨✨✨✨
+
 5. When working with a Graph which is given as a type of Tree unDirected graph and we are applying BFS or DFS
    Then instead of maintaining visited type boolean array, we can simple work in parent node: next node that we are going to
    explore just does not have to be parent rest are fine.
    for (Integer v : adj.getOrDefault(u, Collections.emptyList())){
         if (v != parent){ /* then proceed */ }
    }
+
 6. When it is given that graph is a tree It means we are forcefully being told that:
     This graph is a single component
     This graph would not have any cycle
     This graph traversal does not need to have visited boolean array, we can simply check vai nextNode != parentNode ✨✨✨
+
 7. In Tree type graph only parent->child relationship is needed, hence instead of adding u->v & v->u, we can simply work with
     parent->child as pr given relation in problem (like 2246 submitted solutions).✨✨✨
+
 8. In Dijkstra algorithm we do not use boolean type visited as the one with lower & lower weight serves this purpose where we would not
     visit the same index again as edgeWeights are positive & we can not get lower weight going backward (note: in case of -ive weights
     BellMan ford algo comes into picture until there is a -ive cycle in the graph.
+
 9. In a Directed graph if edges is given like :  edges = [2,2,3,-1]
-    Then we don't need to make adjacency lists using HashMap, we can do traversal using this edges 1D array Alone.✨✨✨
+    Then we do not need to make adjacency lists using HashMap, we can do traversal using this edges 1D array Alone.✨✨✨
+
 10. In DSU when we have explored all edges and created one parent array, Now before processing that data further, we must call
     find(i) for each index in parent array to make sure all values are updated.
+
 11. check out ony DSU solution for problem : "2360. Longest Cycle in a Graph" Here with the help of some given condition we are applying
     DSU on directed graph to detect longest cycle length in graph.🖤🖤🖤
+
 12. TOPOLOGICAL SORT : A really smart question based on this sorting is there on leetcode: 2115, Here even to identify that "it is a graph question
     and being a directed graph can be solved using topological sort" is hard.
     Here problems where, the one node depends on another and that another can be dependent of any other can be solved if we are ale top write the
     Topological sorted order of all of those node(here we start bfs with those nodes that has no dependency or has indegree == 0).
     And every other node that we go through, for this topological order to be created, is a reachable node. Rest those were not reachable must be
     in some kind of cycle and topological order does not contain cycle, hence only valid node will be there.🔥🔥🔥
+
 13. After implementing DSU, when we have our parent[] & size[] array ready, there are multiple ways to know about:
     how many parents we have & how many components they have
     A. Brute force ways: Using HashSet to store unique data in parents array & later that HashSet can be used to get size[value]
@@ -45,6 +58,7 @@
         for (Integer component : components) {
             int currComponentSize = size[component];
         }
+
     B. Optimal way: Instead of using HashSet we can use simple array & increment common parents index value
 
         int[] components = new int[n];
@@ -57,6 +71,7 @@
             int currComponentSize = size[i];
             numOfComponents++;
         }
+
     C. Most optimal way : simply traverse all nodes/parentsArray & when index == parent[index] means this is our leader of one of the component
        and those under his leader ship would not have same condition true, hence calculate the size as well
 
@@ -69,7 +84,7 @@
        }
        return count;
 
-14. While applying Dijkstra algorithm or doing any BFS before exploring the neighbour node of current node, below can check significant
+14. While applying Dijkstra algorithm or doing any BFS before exploring the neighbour node of current node, below check can save significant
     amount of time:
     if (currWeight_of_u > minWeight_so_far[u]) continue;
     // do not explore neighbours nodes of v further in the HashMap
@@ -121,10 +136,10 @@
             }
     }
 
-22. When we are bound to handle out of int range cases in priority queue
+22. When we are bound to handle out of intMax range cases in priority queue
     PriorityQueue<long[]> pq = new PriorityQueue<>((a, b) -> (int)a[1] - (int)b[1]);
-    PriorityQueue<long[]>  q = new PriorityQueue<>((a, b) -> a[1] < b[1] ?  -1 : 1);
-    PriorityQueue<long[]>  q = new PriorityQueue<>((a, b) -> Long.compare(a[1], b[1]));
+    PriorityQueue<long[]> pq = new PriorityQueue<>((a, b) -> a[1] < b[1] ?  -1 : 1);
+    PriorityQueue<long[]> pq = new PriorityQueue<>((a, b) -> Long.compare(a[1], b[1]));
     PriorityQueue<Pair>   pq = new PriorityQueue<>(Comparator.comparingLong(a -> a.weight));
 
     in such problem we can use long INF as : Long.MAX_VALUE / 2;
@@ -146,7 +161,7 @@
             }
         arr[i] = ch;
 
-24. If given that graph is Acyclic, think about "topological sort" OR "onion peeling", doesn't matter if given Graph is directed/undirected.
+24. If given that graph is Acyclic, think about "topological sort" OR "onion peeling", does't matter if given Graph is directed/undirected.
 
 25. Whenever we are using the combination of PriorityQueue & visited Hashset
     then make sure that we mark the key visited only when it pops out of queue at the starting of while loop.
@@ -155,7 +170,7 @@
 26. As a rule of thumb TLE happens around 10^8, so when n = 100 and edges = n^2 === 10^4, any algorithm under O(E^2) or O(n^4) can pass!
     Like FloydWarshall TC : nv^3
 
-27. The discussion of Dijkstra's time complexity makes the assumption that the number of edges ∣E∣ is proportional to ∣V∣ 2 .
+27. The discussion of Dijkstra s time complexity makes the assumption that the number of edges ∣E∣ is proportional to ∣V∣^2 .
     While such a graph is theoretically possible because each vertex can have ∣V∣−1 edges, real world graphs tend to be sparse.
     It is more common in discussions of Dijkstra's algorithm to assume that ∣E∣ is proportional to ∣V∣ (not ∣V∣ 2 ). Assuming more
     realistic inputs, the time complexity for a single run of the algorithm is O(n⋅log(n)), where n=∣V∣. We run this for each node,
