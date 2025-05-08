@@ -193,7 +193,8 @@
     d. If nothing is working so far, Check if reversing the graph can help or not.
     e. As in only Directed graph we can do reversing, it would be the last option if nothing works!!!!!
 
-
+30. WE CAN NOT APPLY WAVE TYPE BFS IN DIJKSTRA ALGORITHM DUE TO THE USE OF PRIORITY-QUEUE.
+    As we can not use wave type BFS in PriorityQueue hence attached delta with each node being put in PQ itself (3342 leetcode problem).
 
 
 
