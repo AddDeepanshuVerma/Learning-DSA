@@ -1,8 +1,9 @@
-package POTD_LEETCODE;
+package POTD_LEETCODE.Dynamic_Programming;
 
 import java.util.Arrays;
 import java.util.HashSet;
 
+//Creating all permutation with !n and for each permutation, running the balanced check loop hence N more === !n * n
 class CountBalancedPermutations_3343 {
     int count;
     int totalSum;
