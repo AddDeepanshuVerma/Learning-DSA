@@ -1,4 +1,4 @@
-package POTD_LEETCODE;
+package POTD_LEETCODE.String;
 
 class LengthAfterTransformations_3335_2 {
 
